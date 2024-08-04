@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Joiner</title>
+    <title>Free Fire API</title>
     <script>
         function redirectToURL() {
-            // Get the values from the input fields
             const region = document.getElementById("region").value;
             const uid = document.getElementById("uid").value;
 
-            // Combine the values
             const fullURL = "free-ff-api-src-dcu9.onrender.com/api/v1/account?region=" + region + "&uid=" + uid;
 
-            // Redirect to the new URL
-            window.location.href = "http://" + fullURL;
+            window.location.href = "https://" + fullURL;
         }
     </script>
 </head>
 <body>
-    <h1>URL Joiner</h1>
+    <h1>Free Fire API</h1>
 
     <label for="region">Region:</label>
     <input type="text" id="region" name="region" placeholder="IND, SG, BR, VN" required><br><br>
