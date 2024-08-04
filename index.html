@@ -7,12 +7,11 @@
     <script>
         function redirectToURL() {
             // Get the values from the input fields
-            const part1 = document.getElementById("part1").value;
-            const part2 = document.getElementById("part2").value;
-            const part3 = document.getElementById("part3").value;
+            const region = document.getElementById("region").value;
+            const uid = document.getElementById("uid").value;
 
             // Combine the values
-            const fullURL = "free-ff-api-src-dcu9.onrender.com/api/v1/account?region=" + part1 + "&uid=" + part3;
+            const fullURL = "free-ff-api-src-dcu9.onrender.com/api/v1/account?region=" + region + "&uid=" + uid;
 
             // Redirect to the new URL
             window.location.href = "http://" + fullURL;
