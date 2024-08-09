@@ -1,0 +1,15 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    height: 25px;
+    width: 40px;
+    background-color:#7000ff;
+    color: #FFFFFF;
+    border-radius: 25%;
+}
