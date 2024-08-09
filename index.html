@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ff-api-styles.css">
     <title>Free Fire API</title>
     <script>
         function redirectToURL() {
             const region = document.getElementById("region").value;
             const uid = document.getElementById("uid").value;
 
-            const fullURL = "free-ff-api-src-dcu9.onrender.com/api/v1/account?region=" + region + "&uid=" + uid;
-
-            window.location.href = "https://" + fullURL;
+            const url = "free-ff-api-src-dcu9.onrender.com/api/v1/account?region=" + region + "&uid=" + uid;
+            document.getElementById("json").src = "https://" + url;
         }
     </script>
 </head>
 <body>
     <h1>Free Fire API</h1>
 
-    <label for="region">Region:</label>
+    <label for="region">Region:
     <input type="text" id="region" name="region" placeholder="IND, SG, BR, VN" required><br><br>
+    </label>
 
-    <label for="uid">UID:</label>
+    <label for="uid">UID:
     <input type="text" id="uid" name="uid" placeholder="2180732447" required><br><br>
+    </label>
 
-    <button onclick="redirectToURL()">Go</button>
+    <button onclick="redirectToURL()">GO!</button>
+
+    <br><br>
     
+    <iframe id="json" width="100%" height="8005" title="json"></iframe>
+
 </body>
 </html>
