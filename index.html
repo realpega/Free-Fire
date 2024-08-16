@@ -82,7 +82,6 @@
 </head>
 
 <body class="bg-dark text-light">
-    
     <div class="d-flex justify-content-center">
         <h1>Free Fire API</h1>
     </div>
@@ -90,54 +89,29 @@
     <br/>
 
     <div>
-        
-        <div class="d-flex justify-content-center">
-            <h5 class="mt-1">REGION:&nbsp;&nbsp;&nbsp;</h5>
-            <button class="btn btn-primary border border-light" onclick="ind()">
-                IND
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="br()">
-                BR
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="sg()">
-                SG
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="ru()">
-                RU
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="id()">
-                ID
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="tw()">
-                TW
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="us()">
-                US
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="vn()">
-                VN
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="th()">
-                TH
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="me()">
-                ME
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="pk()">
-                PK
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="cis()">
-                CIS
-            </button>&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary border border-light" onclick="bd()">
-                BD
-            </button>
+        <div class="d-flex justify-content-center flex-wrap text-center">
+            <h5 class="mt-2">REGION:&nbsp;&nbsp;</h5>
+            <div class="d-flex flex-wrap justify-content-center">
+                <button class="btn btn-primary border border-light m-1" onclick="ind()">IND</button>
+                <button class="btn btn-primary border border-light m-1" onclick="br()">BR</button>
+                <button class="btn btn-primary border border-light m-1" onclick="sg()">SG</button>
+                <button class="btn btn-primary border border-light m-1" onclick="ru()">RU</button>
+                <button class="btn btn-primary border border-light m-1" onclick="id()">ID</button>
+                <button class="btn btn-primary border border-light m-1" onclick="tw()">TW</button>
+                <button class="btn btn-primary border border-light m-1" onclick="us()">US</button>
+                <button class="btn btn-primary border border-light m-1" onclick="vn()">VN</button>
+                <button class="btn btn-primary border border-light m-1" onclick="th()">TH</button>
+                <button class="btn btn-primary border border-light m-1" onclick="me()">ME</button>
+                <button class="btn btn-primary border border-light m-1" onclick="pk()">PK</button>
+                <button class="btn btn-primary border border-light m-1" onclick="cis()">CIS</button>
+                <button class="btn btn-primary border border-light m-1" onclick="bd()">BD</button>
+            </div>
         </div>
     </div>
 
     <br/>
 
-    <div class="h5 d-flex justify-content-center"> 
+    <div class="h5 mt-3 d-flex justify-content-center"> 
         <label for="uid">UID:&nbsp;
             <input class="h5 rounded-pill text-dark" style="width: 125px; text-align: center;" type="text" id="uid" name="uid" placeholder="2180732447" required>
         </label>
@@ -152,6 +126,6 @@
     <br/>
 
     <iframe id="json" width="100%" height="800" title="json"></iframe>
-
 </body>
+
 </html>
