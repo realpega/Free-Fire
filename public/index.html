@@ -12,23 +12,14 @@
             region = selectedRegion;
             document.getElementById("region").value = region;
         }
+        
+async function fetchData() {
+    const uid = document.getElementById("uid").value;
+    const response = await fetch(`https://thalaforareason.store/api/freefire?region=us&uid=${uid}`);
+    const data = await response.json();
+    document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+}
 
-        async function fetchData() {
-            const uid = document.getElementById("uid").value;
-            if (uid === "") {
-                alert("Please enter a UID");
-                return;
-            }
-
-            const response = await fetch(`/api/freefire?region=${region}&uid=${uid}`);
-            if (!response.ok) {
-                document.getElementById("output").textContent = "Failed to fetch data. Please try again.";
-                return;
-            }
-
-            const data = await response.json();
-            document.getElementById("output").textContent = JSON.stringify(data, null, 2);
-        }
     </script>
 </head>
 
