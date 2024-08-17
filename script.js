@@ -1,6 +1,3 @@
-async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5330447822010838"
-     crossorigin="anonymous"
-
 let region = "";
 
         function setRegion(newRegion) {
