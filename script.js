@@ -9,6 +9,8 @@ let region = "";
             const uid = document.getElementById("uid").value;
             const key = process.env.KEY;
             const url = `https://www.info.freefireinfo.site/api/${region}/${uid}?key=${key}`;
+
+                window.location.href = url;
             
             fetch(url)
                 .then(response => response.json())
