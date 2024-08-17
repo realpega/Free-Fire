@@ -7,7 +7,8 @@ let region = "";
 
         function redirectToURL() {
             const uid = document.getElementById("uid").value;
-            const url = `https://www.info.freefireinfo.site/api/${region}/${uid}?key=sounava777`;
+            const key = process.env.KEY;
+            const url = `https://www.info.freefireinfo.site/api/${region}/${uid}?key=${key}`;
             
             fetch(url)
                 .then(response => response.json())
