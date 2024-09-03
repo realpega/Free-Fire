@@ -21,6 +21,9 @@ let region = "";
         }
 
         function displayData(data) {
+                
+        document.getElementById('accountId').textContent = data.basicInfo.accountId;
+        document.getElementById('createAt').textContent = data.basicInfo.createAt;
             const displayElement = document.getElementById("dataDisplay");
             displayElement.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
         }
