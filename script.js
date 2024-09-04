@@ -24,6 +24,8 @@ let region = "";
                 
         document.getElementById('accountId').textContent = data.basicInfo.accountId;
         document.getElementById('createAt').textContent = data.basicInfo.createAt;
+        document.getElementById('headPic').textContent = data.basicInfo.headPic;
+                
             const displayElement = document.getElementById("dataDisplay");
             displayElement.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
         }
