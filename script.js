@@ -22,13 +22,13 @@ let region = "";
 
         function displayData(data) {
                 
-        document.getElementById('accountId').textContent = data.basicInfo.accountId;
+        /*document.getElementById('accountId').textContent = data.basicInfo.accountId;
         document.getElementById('badgeId').textContent = data.basicInfo.badgeId;
         document.getElementById('bannerId').textContent = data.basicInfo.bannerId:
         document.getElementById('createAt').textContent = data.basicInfo.createAt;
         document.getElementById('headPic').textContent = data.basicInfo.headPic;
         document.getElementById('lastLoginAt').textContent = data.basicInfo.lastLoginAt;
-        document.getElementById('nickname').textContent = data.basicInfo.nickname;
+        document.getElementById('nickname').textContent = data.basicInfo.nickname;*/
                 
             const displayElement = document.getElementById("dataDisplay");
             displayElement.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
