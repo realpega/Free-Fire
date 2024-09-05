@@ -25,7 +25,6 @@ function displayData(data) {
     document.getElementById('accountId').textContent = data.basicInfo.accountId;
     document.getElementById('badgeId').textContent = data.basicInfo.badgeId;
     document.getElementById('bannerId').textContent = data.basicInfo.bannerId;
-    document.getElementById('createAt').textContent = data.basicInfo.createAt;
     document.getElementById('headPic').textContent = data.basicInfo.headPic;
     document.getElementById('lastLoginAt').textContent = data.basicInfo.lastLoginAt;
     document.getElementById('nickname').textContent = data.basicInfo.nickname;
@@ -35,7 +34,7 @@ function displayData(data) {
     document.getElementById('level').textContent = data.basicInfo.level;
     document.getElementById('liked').textContent = data.basicInfo.liked;
 
-    /*const createAtEpoch = parseInt(data.basicInfo.createAt, 10);
+    const createAtEpoch = parseInt(data.basicInfo.createAt, 10);
     const offsetMinutes = 330;
     const formattedCreateAt = convertEpochToTimeZone(createAtEpoch, offsetMinutes);
         
@@ -56,7 +55,7 @@ function convertEpochToTimeZone(epochTime, offsetMinutes) {
     const offsetString = `GMT${offsetSign}${offsetHours}:${String(offsetMins).padStart(2, '0')}`;
 
     return `${day} ${month} ${year} ${hours}:${minutes}:${seconds} ${offsetString}`;
-}*/
+}
         document.addEventListener('keydown', function(event) {
             if (event.keyCode === 123) {
                 event.preventDefault();
