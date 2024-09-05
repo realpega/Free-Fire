@@ -1,4 +1,4 @@
-elet region = "";
+let region = "";
 
         function setRegion(newRegion) {
             region = newRegion;
