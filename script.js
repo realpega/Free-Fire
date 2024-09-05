@@ -29,7 +29,11 @@ let region = "";
         document.getElementById('headPic').textContent = data.basicInfo.headPic;
         document.getElementById('lastLoginAt').textContent = data.basicInfo.lastLoginAt;
         document.getElementById('nickname').textContent = data.basicInfo.nickname;
-                
+        document.getElementById('exp').textContent = data.basicInfo.exp;
+        document.getElementById('rank').textContent = data.basicInfo.rank;
+        document.getElementById('csRank').textContent = data.basicInfo.csRank;
+        document.getElementById('level').textContent = data.basicInfo.level;
+        document.getElementById('liked').textContent = data.basicInfo.liked;
             const displayElement = document.getElementById("dataDisplay");
             displayElement.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
         }
