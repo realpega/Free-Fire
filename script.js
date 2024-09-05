@@ -34,8 +34,9 @@ let region = "";
         document.getElementById('csRank').textContent = data.basicInfo.csRank;
         document.getElementById('level').textContent = data.basicInfo.level;
         document.getElementById('liked').textContent = data.basicInfo.liked;
-            const displayElement = document.getElementById("dataDisplay");
-            displayElement.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                
+        /*const displayElement = document.getElementById("dataDisplay");
+        displayElement.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;*/
         }
 
         document.addEventListener('keydown', function(event) {
