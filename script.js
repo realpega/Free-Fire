@@ -22,8 +22,8 @@ let region = "";
 
         function displayData(data) {
                 
-        /*document.getElementById('accountId').textContent = data.basicInfo.accountId;
-        document.getElementById('badgeId').textContent = data.basicInfo.badgeId;*/
+        document.getElementById('accountId').textContent = data.basicInfo.accountId;
+        //document.getElementById('badgeId').textContent = data.basicInfo.badgeId;
         document.getElementById('bannerId').textContent = data.basicInfo.bannerId:
         document.getElementById('createAt').textContent = data.basicInfo.createAt;
         document.getElementById('headPic').textContent = data.basicInfo.headPic;
