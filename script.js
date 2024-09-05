@@ -1,4 +1,3 @@
-
 let region = "";
 
         function setRegion(newRegion) {
