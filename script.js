@@ -34,7 +34,13 @@ let region = "";
         document.getElementById('csRank').textContent = data.basicInfo.csRank;
         document.getElementById('level').textContent = data.basicInfo.level;
         document.getElementById('liked').textContent = data.basicInfo.liked;
-                
+
+        document.getElementById('title').textContent = data.basicInfo.title;
+        document.getElementById('clanName').textContent = data.clanBasicInfo.clanName;
+        document.getElementById('clanId').textContent = data.clanBasicInfo.clanId;
+        document.getElementById('clanLevel').textContent = data.clanBasicInfo.clanLevel;
+        document.getElementById('memberNum').textContent = data.clanBasicInfo.memberNum;
+        document.getElementById('captainId').textContent = data.clanBasicInfo.captainId;
         }
 
         document.addEventListener('keydown', function(event) {
