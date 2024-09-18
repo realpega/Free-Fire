@@ -41,7 +41,7 @@ let region = "";
         document.getElementById('clanLevel').textContent = data.clanBasicInfo.clanLevel;
         document.getElementById('memberNum').textContent = data.clanBasicInfo.memberNum;
         document.getElementById('captainId').textContent = data.clanBasicInfo.captainId;
-        document.getElementById('captainId').textContent = data.socialInfo.signature;
+        document.getElementById('signature').textContent = data.socialInfo.signature;
         }
 
         document.addEventListener('keydown', function(event) {
