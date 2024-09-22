@@ -7,14 +7,17 @@
     <title>Free Fire Data</title>
 </head>
   <body>
-    <input id="uid" type="number">
-<button id="send" onclick="submitNumber()">Go</button>
-
-<script>
-function submitNumber() {
-    const number = document.getElementById("uid").value;
-}
-</script>
+      <input id="uid" type="number" placeholder="Enter number">
+    <button id="send" onclick="loadIframe()">Go</button>
     
+    <iframe id="resultFrame" width="600" height="400" style="border:none;"></iframe>
+
+    <script>
+        function loadIframe() {
+            const number = document.getElementById("uid").value;
+            const url = `https://likes.freefireinfo.site/api/br/${number}?key=sounava777`;
+            document.getElementById("resultFrame").src = url;
+        }
+                </script>
   </body>
 </html>
