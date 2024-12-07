@@ -7,7 +7,7 @@ let region = "";
 
         function redirectToURL() {
             const uid = document.getElementById("uid").value;
-            const key = "sounava777";
+            const key = "83848373993037";
             const url = `https://www.info.freefireinfo.site/api/${region}/${uid}?key=${key}`;
             
             fetch(url)
