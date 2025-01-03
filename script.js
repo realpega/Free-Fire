@@ -40,6 +40,7 @@ let region = "";
         document.getElementById('clanId').textContent = data.clanBasicInfo.clanId;
         document.getElementById('clanLevel').textContent = data.clanBasicInfo.clanLevel;
         document.getElementById('memberNum').textContent = data.clanBasicInfo.memberNum;
+        document.getElementById('clanCapacity').textContent = data.clanBasicInfo.capacity;
         document.getElementById('captainId').textContent = data.clanBasicInfo.captainId;
 
         document.getElementById('signature').textContent = data.socialInfo.signature;
