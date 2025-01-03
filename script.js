@@ -20,11 +20,6 @@ let region = "";
                 });
         }
 
-function unixToHumanTime(unixTime) {
-    const date = new Date(unixTime * 1000);
-    return date.toLocaleString();
-        }
-
         function displayData(data) {
                 
         document.getElementById('accountId').textContent = data.basicInfo.accountId;
@@ -68,6 +63,10 @@ function unixToHumanTime(unixTime) {
         document.getElementById('petSkin').textContent = data.petInfo.skinId;
         }
 
+function unixToHumanTime(unixTime) {
+    const date = new Date(unixTime * 1000);
+    return date.toLocaleString();
+}
         document.addEventListener('keydown', function(event) {
             if (event.keyCode === 123) {
                 event.preventDefault();
