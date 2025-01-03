@@ -42,6 +42,9 @@ let region = "";
         document.getElementById('memberNum').textContent = data.clanBasicInfo.memberNum;
         document.getElementById('captainId').textContent = data.clanBasicInfo.captainId;
         document.getElementById('signature').textContent = data.socialInfo.signature;
+
+        document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
+        document.getElementById('creditScore').textContent = data.creditScoreInfo.rewardState;
         }
 
         document.addEventListener('keydown', function(event) {
