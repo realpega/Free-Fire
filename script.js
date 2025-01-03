@@ -29,9 +29,9 @@ function unixToHumanTime(unixTime) {
         document.getElementById('accountId').textContent = data.basicInfo.accountId;
         document.getElementById('badgeId').textContent = data.basicInfo.badgeId;
         document.getElementById('bannerId').textContent = data.basicInfo.bannerId;
-        document.getElementById('createAt').textContent = data.basicInfo.createAt;
+        document.getElementById('createAt').textContent = unixToHumanTime(data.basicInfo.createAt);
         document.getElementById('headPic').textContent = data.basicInfo.headPic;
-        document.getElementById('lastLoginAt').textContent = data.basicInfo.lastLoginAt;
+        document.getElementById('lastLoginAt').textContent = unixToHumanTime(data.basicInfo.lastLoginAt);
         document.getElementById('nickname').textContent = data.basicInfo.nickname;
         document.getElementById('exp').textContent = data.basicInfo.exp;
         document.getElementById('rank').textContent = data.basicInfo.rank;
@@ -55,18 +55,15 @@ function unixToHumanTime(unixTime) {
         document.getElementById('clanCapacity').textContent = data.clanBasicInfo.capacity;
         document.getElementById('captainId').textContent = data.clanBasicInfo.captainId;
 
-        document.getElementById('captainNickname').textContent = data.captainBasicInfo.nickname;
-        document.getElementById('captainLevel').textContent = data.captainBasicInfo.level;
-        document.getElementById('captainExp').textContent = data.captainBasicInfo.exp;
-        document.getElementById('captainLiked').textContent = data.captainBasicInfo.liked;
-                
-
         document.getElementById('signature').textContent = data.socialInfo.signature;
 
         document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
         document.getElementById('rewardState').textContent = data.creditScoreInfo.rewardState;
 
-        
+        document.getElementById('captainNickname').textContent = data.captainBasicInfo.nickname;
+        document.getElementById('captainLevel').textContent = data.captainBasicInfo.level;
+        document.getElementById('captainExp').textContent = data.captainBasicInfo.exp;
+        document.getElementById('captainLiked').textContent = data.captainBasicInfo.liked;
         }
 
         document.addEventListener('keydown', function(event) {
