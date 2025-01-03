@@ -26,9 +26,9 @@ function unixToHumanTime(unixTime) {
         }
 
 function getPetName(petId) {
-    if (petId === "1300000112") {
+    if (petId == "1300000112") {
         return "Kitty";
-    } else if (petId === "1300000031") {
+    } else if (petId == "1300000031") {
         return "Panda";
     } else {
         return "";
@@ -68,8 +68,7 @@ function getPetName(petId) {
         document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
         document.getElementById('rewardState').textContent = data.creditScoreInfo.rewardState;
 
-        const petName1 = getPetName(data.petInfo.name);
-        document.getElementById('petId').textContent = petName1 ? petName1 : data.petInfo.name;
+        document.getElementById('petId').textContent = getPetName(data.petInfo.name);
         document.getElementById('petName').textContent = data.petInfo.name;
         document.getElementById('petStatus').textContent = data.petInfo.isSelected;
         document.getElementById('petLevel').textContent = data.petInfo.level;
