@@ -32,7 +32,7 @@ function unixToHumanTime(unixTime) {
         document.getElementById('bannerId').textContent = data.basicInfo.bannerId;
         document.getElementById('createAt').textContent = unixToHumanTime(data.basicInfo.createAt);
         document.getElementById('headPic').textContent = data.basicInfo.headPic;
-        document.getElementById('lastLoginAt').textContent = data.basicInfo.lastLoginAt;
+        document.getElementById('lastLoginAt').textContent = unixToHumanTime(data.basicInfo.lastLoginAt);
         document.getElementById('nickname').textContent = data.basicInfo.nickname;
         document.getElementById('exp').textContent = data.basicInfo.exp;
         document.getElementById('rank').textContent = data.basicInfo.rank;
