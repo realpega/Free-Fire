@@ -20,12 +20,17 @@ let region = "";
                 });
         }
 
+function unixToHumanTime(unixTime) {
+    const date = new Date(unixTime * 1000);
+    return date.toLocaleString();
+        }
+
         function displayData(data) {
                 
         document.getElementById('accountId').textContent = data.basicInfo.accountId;
         document.getElementById('badgeId').textContent = data.basicInfo.badgeId;
         document.getElementById('bannerId').textContent = data.basicInfo.bannerId;
-        document.getElementById('createAt').textContent = data.basicInfo.createAt;
+        document.getElementById('createAt').textContent = unixToHumanTime(data.basicInfo.createAt);
         document.getElementById('headPic').textContent = data.basicInfo.headPic;
         document.getElementById('lastLoginAt').textContent = data.basicInfo.lastLoginAt;
         document.getElementById('nickname').textContent = data.basicInfo.nickname;
