@@ -68,8 +68,8 @@ function getPetName(petId) {
         document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
         document.getElementById('rewardState').textContent = data.creditScoreInfo.rewardState;
 
-        const petName = getPetName(data.petInfo.name);
-        document.getElementById('petId').textContent = petName ? petName : data.petInfo.name;
+        const petName1 = getPetName(data.petInfo.name);
+        document.getElementById('petId').textContent = petName1 ? petName1 : data.petInfo.name;
         document.getElementById('petName').textContent = data.petInfo.name;
         document.getElementById('petStatus').textContent = data.petInfo.isSelected;
         document.getElementById('petLevel').textContent = data.petInfo.level;
