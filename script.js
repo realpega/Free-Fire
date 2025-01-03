@@ -43,6 +43,12 @@ let region = "";
         document.getElementById('clanCapacity').textContent = data.clanBasicInfo.capacity;
         document.getElementById('captainId').textContent = data.clanBasicInfo.captainId;
 
+        document.getElementById('captainNickname').textContent = data.captainBasicInfo.nickname;
+        document.getElementById('captainLevel').textContent = data.captainBasicInfo.level;
+        document.getElementById('captainExp').textContent = data.captainBasicInfo.exp;
+        document.getElementById('captainLiked').textContent = data.captainBasicInfo.liked;
+                
+
         document.getElementById('signature').textContent = data.socialInfo.signature;
 
         document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
