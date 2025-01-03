@@ -218,8 +218,13 @@ function displayData(data) {
         document.getElementById('csRank').textContent = data.basicInfo.csRank;
         document.getElementById('level').textContent = data.basicInfo.level;
         document.getElementById('liked').textContent = data.basicInfo.liked;
-        document.getElementById('title').textContent = data.basicInfo.title;
 
+        const titleName getPetName(data.basicInfo.title);
+        if (titleName) {
+                document.getElementById('title').textContent = titleName;
+        } else {
+                document.getElementById('title').textContent = data.basicInfo.title;
+        }
         const petNickname = getPetName(data.petInfo.id);
         if (petNickname) {
                 document.getElementById('petId').textContent = petNickname;
