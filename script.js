@@ -40,6 +40,14 @@ function unixToHumanTime(unixTime) {
         document.getElementById('liked').textContent = data.basicInfo.liked;
         document.getElementById('title').textContent = data.basicInfo.title;
 
+        document.getElementById('petId').textContent = data.petInfo.id;
+        document.getElementById('petName').textContent = data.petInfo.name;
+        document.getElementById('petStatus').textContent = data.petInfo.isSelected;
+        document.getElementById('petLevel').textContent = data.petInfo.level;
+        document.getElementById('petExp').textContent = data.petInfo.exp;
+        document.getElementById('petSkill').textContent = data.petInfo.selectedSkillId;
+        document.getElementById('petSkin').textContent = data.petInfo.skinId;
+
         document.getElementById('clanName').textContent = data.clanBasicInfo.clanName;
         document.getElementById('clanId').textContent = data.clanBasicInfo.clanId;
         document.getElementById('clanLevel').textContent = data.clanBasicInfo.clanLevel;
@@ -58,13 +66,7 @@ function unixToHumanTime(unixTime) {
         document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
         document.getElementById('rewardState').textContent = data.creditScoreInfo.rewardState;
 
-        document.getElementById('petId').textContent = data.petInfo.id;
-        document.getElementById('petName').textContent = data.petInfo.name;
-        document.getElementById('petStatus').textContent = data.petInfo.isSelected;
-        document.getElementById('petLevel').textContent = data.petInfo.level;
-        document.getElementById('petExp').textContent = data.petInfo.exp;
-        document.getElementById('petSkill').textContent = data.petInfo.selectedSkillId;
-        document.getElementById('petSkin').textContent = data.petInfo.skinId;
+        
         }
 
         document.addEventListener('keydown', function(event) {
