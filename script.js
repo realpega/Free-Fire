@@ -21,11 +21,11 @@ let region = "";
         }
 
 function unixToHumanTime(unixTime) {
-    const date = new Date(unixTime * 1000);
+  getPetName  const date = new Date(unixTime * 1000);
     return date.toLocaleString();
         }
 
-function getPetName(petId) {
+function getPetName(petId1) {
     if (petId == "1300000112") {
         return "Kitty";
     } else if (petId == "1300000031") {
