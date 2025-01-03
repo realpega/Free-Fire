@@ -23,16 +23,6 @@ let region = "";
 function unixToHumanTime(unixTime) {
   getPetName  const date = new Date(unixTime * 1000);
     return date.toLocaleString();
-        }
-
-function getPetName(petId1) {
-    if (petId == "1300000112") {
-        return "Kitty";
-    } else if (petId == "1300000031") {
-        return "Panda";
-    } else {
-        return "";
-    }
 }
 
         function displayData(data) {
