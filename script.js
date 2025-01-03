@@ -24,6 +24,17 @@ function unixToHumanTime(unixTime) {
     const date = new Date(unixTime * 1000);
     return date.toLocaleString();
 }
+
+function getPetName(petId) {
+    if (petId === "1300000001") {
+        return "Kitty";
+    } else if (petId === "1300000031") {
+        return "Panda";
+    } else {
+        return "";
+    }
+}
+
         function displayData(data) {
                 
         document.getElementById('accountId').textContent = data.basicInfo.accountId;
@@ -40,7 +51,13 @@ function unixToHumanTime(unixTime) {
         document.getElementById('liked').textContent = data.basicInfo.liked;
         document.getElementById('title').textContent = data.basicInfo.title;
 
+                const petName1 = getPetName(data.petInfo.id);
+    if (petName1) {
+        document.getElementById('petId').textContent = petName1;
+    } else {
         document.getElementById('petId').textContent = data.petInfo.id;
+    }
+        //document.getElementById('petId').textContent = data.petInfo.id;
         document.getElementById('petName').textContent = data.petInfo.name;
         document.getElementById('petStatus').textContent = data.petInfo.isSelected;
         document.getElementById('petLevel').textContent = data.petInfo.level;
