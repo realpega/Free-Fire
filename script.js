@@ -26,7 +26,7 @@ function unixToHumanTime(unixTime) {
 }
 
 function getPetName(petId) {
-    if (petId === "1300000001") {
+    if (petId === "1300000112") {
         return "Kitty";
     } else if (petId === "1300000031") {
         return "Panda";
