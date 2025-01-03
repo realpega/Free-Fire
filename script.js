@@ -44,7 +44,7 @@ let region = "";
         document.getElementById('signature').textContent = data.socialInfo.signature;
 
         document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
-        document.getElementById('creditScore').textContent = data.creditScoreInfo.rewardState;
+        document.getElementById('rewardState').textContent = data.creditScoreInfo.rewardState;
         }
 
         document.addEventListener('keydown', function(event) {
