@@ -25,6 +25,16 @@ function unixToHumanTime(unixTime) {
     return date.toLocaleString();
         }
 
+function getPetName(petId) {
+    if (petId === "1300000112") {
+        return "Kitty";
+    } else if (petId === "1300000031") {
+        return "Panda";
+    } else {
+        return "";
+    }
+}
+
         function displayData(data) {
                 
         document.getElementById('accountId').textContent = data.basicInfo.accountId;
@@ -51,15 +61,14 @@ function unixToHumanTime(unixTime) {
         document.getElementById('captainNickname').textContent = data.captainBasicInfo.nickname;
         document.getElementById('captainLevel').textContent = data.captainBasicInfo.level;
         document.getElementById('captainExp').textContent = data.captainBasicInfo.exp;
-        document.getElementById('captainLiked').textContent = data.captainBasicInfo.liked;
-                
+        document.getElementById('captainLiked').textContent = data.captainBasicInfo.liked; 
 
         document.getElementById('signature').textContent = data.socialInfo.signature;
 
         document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
         document.getElementById('rewardState').textContent = data.creditScoreInfo.rewardState;
 
-        document.getElementById('petId').textContent = data.petInfo.id;
+        document.getElementById('petId').textContent = getPetName(data.petInfo.id);
         document.getElementById('petName').textContent = data.petInfo.name;
         document.getElementById('petStatus').textContent = data.petInfo.isSelected;
         document.getElementById('petLevel').textContent = data.petInfo.level;
