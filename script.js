@@ -219,7 +219,7 @@ function displayData(data) {
         document.getElementById('level').textContent = data.basicInfo.level;
         document.getElementById('liked').textContent = data.basicInfo.liked;
 
-        const titleName getPetName(data.basicInfo.title);
+        const titleName getTitleName(data.basicInfo.title);
         if (titleName) {
                 document.getElementById('title').textContent = titleName;
         } else {
