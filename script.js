@@ -221,7 +221,7 @@ function displayData(data) {
 
         const titleName = getTitleName(data.basicInfo.title);
         if (titleName) {
-                document.getElementById('title').textContent = titleName;
+                document.getElementById('title').textContent = titleName.toUpperCase();
         } else {
                 document.getElementById('title').textContent = data.basicInfo.title;
         }
