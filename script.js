@@ -30,7 +30,12 @@ function displayData(data) {
         document.getElementById('badgeId').textContent = data.basicInfo.badgeId;
         document.getElementById('bannerId').textContent = data.basicInfo.bannerId;
         document.getElementById('createAt').textContent = unixToHumanTime(data.basicInfo.createAt);
-        document.getElementById('headPic').textContent = data.basicInfo.headPic;
+        const avatarName = getAvatarName(data.basicInfo.headPic);
+        if (avatarName) {
+                document.getElementById('headPic').textContent = avatarName;
+        } else {
+                document.getElementById('headPic').textContent = data.basicInfo.headPic;
+        }
         document.getElementById('lastLoginAt').textContent = unixToHumanTime(data.basicInfo.lastLoginAt);
         document.getElementById('nickname').textContent = data.basicInfo.nickname;
         document.getElementById('exp').textContent = data.basicInfo.exp;
@@ -38,13 +43,13 @@ function displayData(data) {
         document.getElementById('csRank').textContent = data.basicInfo.csRank;
         document.getElementById('level').textContent = data.basicInfo.level;
         document.getElementById('liked').textContent = data.basicInfo.liked;
-
         const titleName = getTitleName(data.basicInfo.title);
         if (titleName) {
                 document.getElementById('title').textContent = titleName.toUpperCase();
         } else {
                 document.getElementById('title').textContent = data.basicInfo.title;
         }
+
         const petNickname = getPetName(data.petInfo.id);
         if (petNickname) {
                 document.getElementById('petId').textContent = petNickname;
