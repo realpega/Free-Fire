@@ -81,7 +81,7 @@ function displayData(data) {
         document.getElementById('captainLiked').textContent = data.captainBasicInfo.liked;
 }
 
-document.addEventListener('keydown', function(event) {
+/*document.addEventListener('keydown', function(event) {
         if (event.keyCode === 123) {
                 event.preventDefault();
         }
@@ -89,4 +89,4 @@ document.addEventListener('keydown', function(event) {
 
 document.addEventListener('contextmenu', function(event) {
         event.preventDefault();
-});
+});*/

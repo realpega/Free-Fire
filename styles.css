@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Font';
+    src: url('res/font/font.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Font Bold';
+    src: url('res/font/font_bold.woff2') format('woff2');
+}
+
+h3, h4, strong, label[for=uid], .btn, #goBtn {
+    font-family: 'Font Bold', sans-serif;
+}
+
+span, #uid{
+    font-family: 'Font', sans-serif;
+}
+
+#logo {
+    height: 400px;
+}
+
+#uid {
+    width: 175px;
+    text-align: center;
+}
+
+#goBtn {
+    width: 75px;
+    background-color: #6610f2;
+}
+
+@media (max-width: 768px) {
+    #logo {
+      height: auto;
+    }
+
+    #uid {
+        width: 150px;
+        text-align: center;
+    }
+}
