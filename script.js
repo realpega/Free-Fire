@@ -70,6 +70,18 @@ function displayData(data) {
         document.getElementById('clanCapacity').textContent = data.clanBasicInfo.capacity;
         document.getElementById('captainId').textContent = data.clanBasicInfo.captainId;
 
+        const skills = data.profileInfo.equipedSkills.map(skill => skill.skillId).join(', ');
+        document.getElementById('skills').textContent = skills;
+
+        const iconsContainer = document.getElementById('iconsContainer');
+        iconsContainer.innerHTML = '';
+        data.profileInfo.equipedSkills.forEach(skill => {
+                const iconId = skill.skillId; const iconPath = `res/img/icons/${iconId}.png`;
+                const imgElement = document.createElement('img');
+                imgElement.src = iconPath; imgElement.alt = `Icon ${iconId}`;
+                iconsContainer.appendChild(imgElement);
+        });
+
         document.getElementById('signature').textContent = data.socialInfo.signature;
 
         document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
@@ -79,6 +91,8 @@ function displayData(data) {
         document.getElementById('captainLevel').textContent = data.captainBasicInfo.level;
         document.getElementById('captainExp').textContent = data.captainBasicInfo.exp;
         document.getElementById('captainLiked').textContent = data.captainBasicInfo.liked;
+
+        
 }
 
 /*document.addEventListener('keydown', function(event) {
