@@ -7,7 +7,7 @@ function setRegion(newRegion) {
 
 function redirectToURL() {
   const uid = document.getElementById("uid").value;
-  const url = `/api/fetchData?region=${region}&uid=${uid}`;
+  const url = `/api/server?region=${region}&uid=${uid}`;
 
   fetch(url)
     .then(response => response.json())
