@@ -1,18 +1,21 @@
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const express = require('express');
+const path = require('path');
+
+// Dynamic import for `node-fetch` in CommonJS
+const fetch = (...args) =>
+    import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 const app = express();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+// Serve static files
 app.use(express.static(__dirname));
 
+// Serve the main HTML file
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// API route to fetch data
 app.get('/api/data', async (req, res) => {
     const { region, uid } = req.query;
 
@@ -22,7 +25,7 @@ app.get('/api/data', async (req, res) => {
 
     try {
         const apiUrl = `https://www.info.freefireinfo.site/api/${region}/${uid}?key=83848373993037`;
-        const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl); // Use dynamic fetch
         const data = await response.json();
         res.json(data);
     } catch (error) {
@@ -31,5 +34,6 @@ app.get('/api/data', async (req, res) => {
     }
 });
 
+// Start the server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT);
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -1,10 +1,9 @@
 {
   "name": "free-fire",
   "version": "1.0.0",
-  "type": "module",
-  "main": "server.mjs",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.mjs"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.21.2",
