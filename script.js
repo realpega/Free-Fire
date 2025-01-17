@@ -7,8 +7,7 @@ function setRegion(newRegion) {
 
 function redirectToURL() {
         const uid = document.getElementById("uid").value;
-        const key = "83848373993037";
-        const url = `https://www.info.freefireinfo.site/api/${region}/${uid}?key=${key}`;
+        const url = `/api/server/${region}/${uid}?key=${key}`;
             
         fetch(url)
                 .then(response => response.json())
