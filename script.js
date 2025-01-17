@@ -7,15 +7,17 @@ function setRegion(newRegion) {
 
 function redirectToURL() {
         const uid = document.getElementById("uid").value;
-
-        fetch(`/api/data?region=${region}&uid=${uid}`)
-            .then(response => response.json())
-            .then(data => {
-                displayData(data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
+        const key = "83848373993037";
+        const url = `https://www.info.freefireinfo.site/api/${region}/${uid}?key=${key}`;
+            
+        fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                        displayData(data);
+                })
+                .catch(error => {
+                        console.error('Error fetching data:', error);
+                });
 }
 
 function unixToHumanTime(unixTime) {
