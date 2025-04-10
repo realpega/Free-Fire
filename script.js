@@ -7,7 +7,7 @@ function setRegion(newRegion) {
 
 function redirectToURL() {
         const uid = document.getElementById("uid").value;
-        const key = "your-mom-will-die-if-you-use-this-key-on-your-website";
+        const key = "Sounava777-April-04";
         const url = `https://free-fire-data.vercel.app/api/data?region=${region}&uid=${uid}&key=${key}`;  
         fetch(url)
                 .then(response => response.json())
