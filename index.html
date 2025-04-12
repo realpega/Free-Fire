@@ -11,6 +11,7 @@
     <script src="title.js"></script>
     <script src="pet.js"></script>
     <script src="avatar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="bg-dark text-light">
     <div class="d-flex justify-content-center">
@@ -46,6 +47,19 @@
         <button id="goBtn" class="rounded-pill btn text-light" onclick="redirectToURL()">GO!</button>
     </div>
     <br/>
+    <div class="d-flex flex-wrap justify-content-center">
+        <a href="https://t.me/TrueClasher4">
+          <button id="buyBtn" class="btn btn-primary border border-light m-1 d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-telegram me-2" viewBox="0 0 16 16">
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09" />
+            </svg>
+            Buy Key or Source Code
+          </button>
+        </a>
+      </div>      
+    <br />
     <div class="container">
     <h4><u>BASIC INFO</u></h4>
     <br/>
@@ -99,5 +113,487 @@
         <p><strong>Skill ID:</strong> <span id="skills"></span></p>
         <span id="iconsContainer"></span>
     </div>
+    <br />
+    <div id="markdown" style="display:none;">
+# 📝 API Documentation
+
+##  Player Information API
+API Route = https://free-fire-data.vercel.app/api/data?region={region}&uid={uid}&key={key}
+
+**Endpoint:** `api/data`
+**key:** `YOUR-KEY`
+**Method:** `GET`  
+
+This Endpoint Retrieves Player Information based on the Specified Region and User ID.
+
+### 📨 Request Example
+```http
+GET https://free-fire-data.vercel.app/api/data?region=ind&uid=2180732447&key=KEY123
+```
+
+### ☑️ Query Parameters
+
+| Parameter | Type   | Required | Description                   |
+|-----------|--------|----------|-------------------------------|
+| `region`  | string | Yes      | The region code (`sg`, `ind`, `br`,`id`, `tw`, `us`, `sac`, `th`, `me`, `pk`, `cis`, `bd`).|
+| `uid`     | int | Yes      | The user ID.                  |
+| `key`     | string | Yes      | Buy Key from https://t.me/TrueClasher4                  |
+
+
+### 💬 Example of a Successful Reponse May Look Like this,
+```json
+{
+  "basicInfo": {
+    "accountId": "2180732447",
+    "accountPrefers": {
+      "brPregameShowChoices": [
+        "1"
+      ]
+    },
+    "accountType": "1",
+    "badgeId": "1001000082",
+    "bannerId": "901000263",
+    "createAt": "1594621308",
+    "csMaxRank": "201",
+    "csRank": "201",
+    "exp": "1102643",
+    "externalIconInfo": {
+      "showType": "ExternalIconShowType_FRIEND",
+      "status": "ExternalIconStatus_NOT_IN_USE"
+    },
+    "headPic": "902040025",
+    "lastLoginAt": "1700450083",
+    "level": "61",
+    "liked": "11182",
+    "maxRank": "301",
+    "nickname": "SOUNAVA 100K",
+    "pinId": "910000004",
+    "rank": "301",
+    "rankingPoints": "1000",
+    "region": "IND",
+    "releaseVersion": "OB42",
+    "seasonId": "44",
+    "title": "904090022",
+    "weaponSkinShows": [
+      "907102508",
+      "912037001"
+    ]
+  },
+  "clanBasicInfo": {
+
+  },
+  "creditScoreInfo": {
+    "creditScore": "100",
+    "rewardState": "RewardState_UNCLAIMED"
+  },
+  "diamondCostRes": {
+    "diamondCost": "390"
+  },
+  "petInfo": {
+    "exp": "6022",
+    "id": "1300000112",
+    "isSelected": true,
+    "level": "7",
+    "name": "Bhai",
+    "selectedSkillId": "1315000018",
+    "skinId": "1310000124"
+  },
+  "profileInfo": {
+    "avatarId": "102000007",
+    "clothes": [
+      "211000411",
+      "211000894",
+      "214000023",
+      "204033044",
+      "205033048",
+      "203000981"
+    ],
+    "equipedSkills": [
+      {
+        "skillId": "706"
+      },
+      {
+        "skillId": "6501",
+        "slotId": "1"
+      },
+      {
+        "skillId": "2906",
+        "slotId": "2"
+      },
+      {
+        "skillId": "3406",
+        "slotId": "3"
+      }
+    ],
+    "isMarkedStar": true,
+    "isSelected": true,
+    "isSelectedAwaken": true,
+    "skinColor": "50"
+  },
+  "socialInfo": {
+    "accountId": "2180732447",
+    "battleTag": [
+      "PlayerBattleTagID_MELEE",
+      "PlayerBattleTagID_RAMPAGE"
+    ],
+    "battleTagCount": [
+      "172",
+      "107"
+    ],
+    "language": "Language_EN",
+    "signature": "GOING OFFLINE FOR 7 DAYS TO UNBAN ID",
+    "socialTag": [
+      "SocialTag_FASHION",
+      "SocialTag_VETERAN"
+    ]
+  }
+}
+
+```
+
+##  Player Stats API
+API Route = https://free-fire-data.vercel.app/api/stats?region={region}&uid={uid}&key={key}
+
+**Endpoint:** `api/stats`
+**key:** `YOUR-KEY`
+**Method:** `GET`  
+
+This Endpoint Retrieves Player Information based on the Specified Region and User ID.
+
+### 📨 Request Example
+```http
+GET https://free-fire-data.vercel.app/api/stats?region=ind&uid=2180732447&key=KEY123
+```
+
+### ☑️ Query Parameters
+
+| Parameter | Type   | Required | Description                   |
+|-----------|--------|----------|-------------------------------|
+| `region`  | string | Yes      | The region code (`sg`, `ind`, `br`,`id`, `tw`, `us`, `sac`, `th`, `me`, `pk`, `cis`, `bd`).|
+| `uid`     | int | Yes      | The user ID.                  |
+| `key`     | string | Yes      | Buy Key from https://t.me/TrueClasher4                  |
+
+
+### 💬 Example of a Successful Reponse May Look Like this,
+```json
+{
+  "success": true,
+  "soloStats": {
+    "accountId": "10000001",
+    "gamesPlayed": 2,
+    "kills": 7,
+    "detailedStats": {
+      "deaths": 2,
+      "distanceTravelled": 5309,
+      "survivalTime": 587,
+      "highestKills": 4,
+      "damage": 1764,
+      "headshots": 1,
+      "headshotKills": 1,
+      "pickUps": 146
+    }
+  },
+  "duoStats": {
+    "accountId": "10000001",
+    "detailedStats": {
+
+    }
+  },
+  "quadStats": {
+    "accountId": "10000001",
+    "gamesPlayed": 13,
+    "wins": 3,
+    "kills": 36,
+    "detailedStats": {
+      "deaths": 10,
+      "topNTimes": 6,
+      "distanceTravelled": 60689,
+      "survivalTime": 9210,
+      "revives": 4,
+      "highestKills": 6,
+      "damage": 17872,
+      "headshots": 16,
+      "headshotKills": 5,
+      "knockDown": 42,
+      "pickUps": 1536
+    }
+  }
+}
+```
+
+##  Images API
+API Route = https://free-fire-data.vercel.app/api/images?iconName={iconName}&key={key}
+
+**Endpoint:** `api/images`
+**key:** `YOUR-KEY`
+**Method:** `GET`  
+
+This Endpoint Retrieves Player Information based on the Specified Region and User ID.
+
+### 📨 Request Example
+```http
+GET https://free-fire-data.vercel.app/api/images?iconName=Icon_avatar_hair_cos_eggday2021_headwear_blue&key=KEY123
+```
+
+### ☑️ Query Parameters
+
+| Parameter | Type   | Required | Description                   |
+|-----------|--------|----------|-------------------------------|
+| `iconName`  | string | Yes      | The name of the Icon. |
+| `key`     | string | Yes      | Buy Key from https://t.me/TrueClasher4 
+
+
+### 💬 Example of a Successful Reponse May Look Like this,
+
+![Icon_avatar_hair_cos_eggday2021_headwear_blue](https://github.com/realpega/free-fire-api/blob/main/images.png)
+
+##  Craftland Map Info API
+API Route = https://free-fire-data.vercel.app/api/maps?region={region}&code=%23{CODE}&key={key}
+
+**Endpoint:** `api/maps`
+**key:** `YOUR-KEY`
+**Method:** `GET`  
+
+This Endpoint Retrieves Player Information based on the Specified Region and User ID.
+
+### 📨 Request Example
+```http
+GET https://free-fire-data.vercel.app/api/maps?region=sg&code=%23FREEFIREMAPCODE6969&key=KEY123
+```
+
+### ☑️ Query Parameters
+
+| Parameter | Type   | Required | Description                   |
+|-----------|--------|----------|-------------------------------|
+| `region`  | string | Yes      | The region code (`sg`, `ind`, `br`,`id`, `tw`, `us`, `sac`, `th`, `me`, `pk`, `cis`, `bd`).|
+| `code`     | String | Yes      | The map code with `%23` prefix.                  |
+| `key`     | string | Yes      | Buy Key from https://t.me/TrueClasher4                  |
+
+
+### 💬 Example of a Successful Reponse May Look Like this,
+```json
+{
+  "status": "success",
+  "data": {
+    "region": "SG",
+    "lang": "en",
+    "Craftland Map Details": {
+      "MapCode": "#FREEFIREMAPCODE6969",
+      "Creator": "SOUNAVA 100K",
+      "Title": "Booyah!",
+      "Description": "Battle in Style!",
+      "MapCover": "https://dl-sg-production.freefiremobile.com/3C124B_7104104913_10007_1726822648_MAPCOVER.JPG",
+      "Subscribers": 690000,
+      "Likes": 696969,
+      "Teams": 2,
+      "PlayAverage": 690069
+      "Rounds": 1,
+      "Tags": [
+        "PvP",
+        "Squad"
+      ],
+      "Mode": "Customize",
+      "Map": "Bermuda"
+    }
+  }
+}
+```
+
+##  Player Wishlist API
+API Route = https://free-fire-data.vercel.app/api/wishlist?region={region}&uid={uid}&key={key}
+
+**Endpoint:** `api/wishlist`
+**key:** `YOUR-KEY`
+**Method:** `GET`  
+
+This Endpoint Retrieves Player Information based on the Specified Region and User ID.
+
+### 📨 Request Example
+```http
+GET https://free-fire-data.vercel.app/api/wishlist?region=ind&uid=2180732447&key=KEY123
+```
+
+### ☑️ Query Parameters
+
+| Parameter | Type   | Required | Description                   |
+|-----------|--------|----------|-------------------------------|
+| `region`  | string | Yes      | The region code (`sg`, `ind`, `br`,`id`, `tw`, `us`, `sac`, `th`, `me`, `pk`, `cis`, `bd`).|
+| `uid`     | int | Yes      | The user ID.                  |
+| `key`     | string | Yes      | Buy Key from https://t.me/TrueClasher4                  |
+
+
+### 💬 Example of a Successful Reponse May Look Like this,
+
+```json
+{
+  "items": [
+    {
+      "itemId": 102000035,
+      "releaseTime": 1709233149
+    },
+    {
+      "itemId": 203000036,
+      "releaseTime": 1710238335
+    },
+    {
+      "itemId": 203000981,
+      "releaseTime": 1706079412
+    },
+    {
+      "itemId": 204033044,
+      "releaseTime": 1706079412
+    },
+    {
+      "itemId": 205033048,
+      "releaseTime": 1706079412
+    },
+    {
+      "itemId": 211000411,
+      "releaseTime": 1706079412
+    },
+    {
+      "itemId": 211000894,
+      "releaseTime": 1706079412
+    },
+    {
+      "itemId": 214000023,
+      "releaseTime": 1706079412
+    },
+    {
+      "itemId": 901040034,
+      "releaseTime": 1727692721
+    },
+    {
+      "itemId": 902000003,
+      "releaseTime": 1710238335
+    },
+    {
+      "itemId": 902040026,
+      "releaseTime": 1710238335
+    },
+    {
+      "itemId": 902040029,
+      "releaseTime": 1710238335
+    },
+    {
+      "itemId": 902040030,
+      "releaseTime": 1710238335
+    },
+    {
+      "itemId": 903040007,
+      "releaseTime": 1727692721
+    },
+    {
+      "itemId": 903043010,
+      "releaseTime": 1710238335
+    },
+    {
+      "itemId": 904040010,
+      "releaseTime": 1727692721
+    },
+    {
+      "itemId": 904090027,
+      "releaseTime": 1707398570
+    },
+    {
+      "itemId": 905039004,
+      "releaseTime": 1710238335
+    },
+    {
+      "itemId": 906036010,
+      "releaseTime": 1706524016
+    },
+    {
+      "itemId": 907102508,
+      "releaseTime": 1706079412
+    },
+    {
+      "itemId": 907104073,
+      "releaseTime": 1727692721
+    },
+    {
+      "itemId": 907104074,
+      "releaseTime": 1727692721
+    },
+    {
+      "itemId": 907104075,
+      "releaseTime": 1727692721
+    },
+    {
+      "itemId": 907104076,
+      "releaseTime": 1727692721
+    },
+    {
+      "itemId": 907104077,
+      "releaseTime": 1727692721
+    },
+    {
+      "itemId": 909040014,
+      "releaseTime": 1727692721
+    },
+    {
+      "itemId": 909043013,
+      "releaseTime": 1707543814
+    },
+    {
+      "itemId": 911004301,
+      "releaseTime": 1710238335
+    },
+    {
+      "itemId": 912037001,
+      "releaseTime": 1706079412
+    },
+    {
+      "itemId": 921047018,
+      "releaseTime": 1735657844
+    }
+  ]
+}
+```
+
+📚 **Purpose of the API**  
+
+The primary purpose of providing this free API is to enhance the Free Fire community experience. Garena Free Fire does not offer official account information APIs, so this custom solution aims to fill that gap, providing players and developers with valuable account data
+
+🧩 **(Some of🤫) Frameworks and Libraries Used**  
+- **Flask**: A micro web framework for Python to build the API endpoints.
+- **Flask-CORS**: For handling Cross-Origin Resource Sharing (CORS).
+- **PyCryptodome**: For implementing Decryption and Encryption.
+- **Requests**: For making HTTP Requests to Server.
+
+# 📁 Additional Information
+
+- This API response Does not Represent the Actual Structure Received from the Official Garena Server.
+- The Response structure is simplified in an User-Friendly Structure for the ease of understanding for Anyone at any level of Programming.
+
+# 😵 Error Responses
+API might Show Error Response Upon Users' Inaccurate Requests!
+
+### Error Instances and Solutions
+
+- **Error Code:** 400
+  - **Message:** Invalid region.
+  - **Solution:** Make sure you are using a valid region code.
+
+- **Error Code:** 429
+  - **Message:** Abnormal Requests Detected. Please Avoid Misusing Info API for Visits or Your IP may get Blocked!
+  - **Solution:** Avoid excessive requests or contact the API provider for assistance.
+
+- **Error Code:** 500
+  - **Message:** An error occurred while processing your request. Please Recheck Your ID & Region.
+  - **Solution:** Double-check the provided user ID and region, and retry the request. If the issue persists, contact the API provider for support.
+
+---
+
+API Made By Sounava777,
+All Rights Reserved!
+    </div>
+
+    <div id="rendered-markdown" class="container"></div>
+
+  <script>
+    const raw = document.getElementById("markdown").textContent;
+    document.getElementById("rendered-markdown").innerHTML = marked.parse(raw);
+  </script>    
 </body>
 </html>
