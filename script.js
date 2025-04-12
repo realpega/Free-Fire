@@ -1,5 +1,16 @@
 let region = "";
 
+let itemData = [];
+
+fetch('itemData.json')
+  .then(res => res.json())
+  .then(data => {
+    itemData = data;
+  })
+  .catch(err => {
+    console.error('Failed to load itemData.json:', err);
+  });
+
 function setRegion(newRegion) {
         region = newRegion;
         document.getElementById("region").value = region;
@@ -26,15 +37,18 @@ function unixToHumanTime(unixTime) {
 
 function displayData(data) {
         document.getElementById('accountId').textContent = data.basicInfo.accountId;
-        document.getElementById('badgeId').textContent = data.basicInfo.badgeId;
-        document.getElementById('bannerId').textContent = data.basicInfo.bannerId;
+
+        const badgeItem = itemData.find(item => item.itemID == data.basicInfo.badgeId);
+        document.getElementById('badgeId').textContent = badgeItem ? badgeItem.description : data.basicInfo.badgeId;
+        
+        const bannerItem = itemData.find(item => item.itemID == data.basicInfo.bannerId);
+        document.getElementById('bannerId').textContent = bannerItem ? bannerItem.description : data.basicInfo.bannerId;
+
         document.getElementById('createAt').textContent = unixToHumanTime(data.basicInfo.createAt);
-        const avatarName = getAvatarName(data.basicInfo.headPic);
-        if (avatarName) {
-                document.getElementById('headPic').textContent = avatarName;
-        } else {
-                document.getElementById('headPic').textContent = data.basicInfo.headPic;
-        }
+
+        const avatarItem = itemData.find(item => item.itemID == data.profileInfo.avatarId);
+        document.getElementById('headPic').textContent = avatarItem ? avatarItem.description : data.profileInfo.avatarId;
+
         document.getElementById('lastLoginAt').textContent = unixToHumanTime(data.basicInfo.lastLoginAt);
         document.getElementById('nickname').textContent = data.basicInfo.nickname;
         document.getElementById('exp').textContent = data.basicInfo.exp;
@@ -59,8 +73,12 @@ function displayData(data) {
         document.getElementById('petStatus').textContent = data.petInfo.isSelected;
         document.getElementById('petLevel').textContent = data.petInfo.level;
         document.getElementById('petExp').textContent = data.petInfo.exp;
-        document.getElementById('petSkill').textContent = data.petInfo.selectedSkillId;
-        document.getElementById('petSkin').textContent = data.petInfo.skinId;
+
+        const petSkillItem = itemData.find(item => item.itemID == data.petInfo.selectedSkillId);
+        document.getElementById('petSkill').textContent = petSkillItem ? petSkillItem.description : data.petInfo.selectedSkillId;
+
+        const petSkinItem = itemData.find(item => item.itemID == data.petInfo.skinId);
+        document.getElementById('petSkin').textContent = petSkinItem ? petSkinItem.description : data.petInfo.skinId;
 
         document.getElementById('clanName').textContent = data.clanBasicInfo.clanName;
         document.getElementById('clanId').textContent = data.clanBasicInfo.clanId;
@@ -69,17 +87,27 @@ function displayData(data) {
         document.getElementById('clanCapacity').textContent = data.clanBasicInfo.capacity;
         document.getElementById('captainId').textContent = data.clanBasicInfo.captainId;
 
-        const skills = data.profileInfo.equipedSkills.map(skill => skill.skillId).join(', ');
-        document.getElementById('skills').textContent = skills;
+        const skillParts = data.profileInfo.equipedSkills.split(','); // Make array from string
+        let skills = [];
+        for (let i = 0; i < skillParts.length; i += 4) {
+                const skillId = skillParts[i + 1]; // skillId is the 2nd item in every group
+                if (skillId) skills.push(skillId);
+        }
+
+        document.getElementById('skills').textContent = skills.join(', ');
 
         const iconsContainer = document.getElementById('iconsContainer');
         iconsContainer.innerHTML = '';
-        data.profileInfo.equipedSkills.forEach(skill => {
-                const iconId = skill.skillId; const iconPath = `res/img/icons/${iconId}.png`;
+        skills.forEach(skillId => {
+
+                const iconPath = `res/img/icons/${skillId}.png`;
                 const imgElement = document.createElement('img');
-                imgElement.src = iconPath; imgElement.alt = `Icon ${iconId}`;
+                imgElement.src = iconPath;
+                imgElement.alt = `Icon ${skillId}`;
+                imgElement.classList.add('m-1');
                 iconsContainer.appendChild(imgElement);
         });
+
 
         document.getElementById('signature').textContent = data.socialInfo.signature;
 
