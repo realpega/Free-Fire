@@ -9,7 +9,9 @@ fetch('itemData.json')
   })
   .catch(err => {
     console.error('Failed to load itemData.json:', err);
-  });
+});
+
+const key = "Sounava777-April-25";
 
 function setRegion(newRegion) {
         region = newRegion;
@@ -18,7 +20,7 @@ function setRegion(newRegion) {
 
 function redirectToURL() {
         const uid = document.getElementById("uid").value;
-        const key = "Sounava777-April-25";
+        
         const url = `https://free-fire-data.vercel.app/api/data?region=${region}&uid=${uid}&key=${key}`;  
         fetch(url)
                 .then(response => response.json())
@@ -44,10 +46,38 @@ function displayData(data) {
         const bannerItem = itemData.find(item => item.itemID == data.basicInfo.bannerId);
         document.getElementById('bannerId').textContent = bannerItem ? bannerItem.description : data.basicInfo.bannerId;
 
+        document.getElementById('bannerIdId').textContent = data.basicInfo.bannerId;
+
         document.getElementById('createAt').textContent = unixToHumanTime(data.basicInfo.createAt);
 
         const avatarItem = itemData.find(item => item.itemID == data.profileInfo.avatarId);
         document.getElementById('headPic').textContent = avatarItem ? avatarItem.description : data.profileInfo.avatarId;
+
+        document.getElementById('headPicId').textContent = data.profileInfo.avatarId;
+
+        let iconName = avatarItem?.icon;
+        const avatarImg = document.getElementById("avatarImg");
+
+        if (iconName) {
+                const imageUrl = `https://free-fire-data.vercel.app/api/images?iconName=${iconName}&key=${key}`;
+                avatarImg.src = imageUrl;
+                avatarImg.alt = avatarItem.description;
+                avatarImg.style.display = "block";
+            } else {
+                avatarImg.style.display = "none";
+        }
+
+        iconName = bannerItem?.icon;
+        const bannerImg = document.getElementById("bannerImg");
+
+        if (iconName) {
+                const imageUrl = `https://free-fire-data.vercel.app/api/images?iconName=${iconName}&key=${key}`;
+                bannerImg.src = imageUrl;
+                bannerImg.alt = bannerItem.description;
+                bannerImg.style.display = "block";
+            } else {
+                bannerImg.style.display = "none";
+        }
 
         document.getElementById('lastLoginAt').textContent = unixToHumanTime(data.basicInfo.lastLoginAt);
         document.getElementById('nickname').textContent = data.basicInfo.nickname;
