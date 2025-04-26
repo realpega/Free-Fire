@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding HTML - Origins, Usage, and More</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5330447822010838"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">HTML Article</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#what-is-html">What is HTML?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#html-origin">Origin of HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#html-usage">How to Use HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#relevance">HTML in Modern Web Development</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">HTML Tags</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#basic-tags">Basic Tags</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#text-formatting">Text Formatting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#media-tags">Media Tags</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#table-tags">Table Tags</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#form-tags">Form Tags</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CSS Article</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#intro">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#history">History of CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#syntax">CSS Syntax</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#types">Types of CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#selectors">CSS Selectors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#box-model">CSS Box Model</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#flexbox">CSS Flexbox</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CSS Guide</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#css-attributes">CSS Attributes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inline-css">Inline CSS</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">JavaScript Guide</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#intro">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#history">History of JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How JavaScript Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Key Features of JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dom">JavaScript and the DOM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#examples">JavaScript Examples</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">JavaScript Essentials</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#functions">Functions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#loops">Loops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conditionals">Conditional Statements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#additional">Additional Key Concepts</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Programming Essentials</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#good-practices">Good Practices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#qualities">Qualities of a Good Programmer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conclusion">Conclusion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container mt-5">
+        <h1 class="text-center">Understanding HTML: Origins, Usage, and More</h1>
+
+        <!-- Section: What is HTML? -->
+        <section id="what-is-html" class="my-5">
+            <h2>What is HTML?</h2>
+            <p>
+                HTML, which stands for HyperText Markup Language, is the standard markup language used to create web pages. It forms the structure of web content by using a system of tags and attributes to define elements such as text, images, links, and more. Essentially, HTML provides the backbone of any website, allowing browsers to interpret and display the content in an organized, readable manner.
+            </p>
+            <p>
+                The primary function of HTML is to dictate the structure of a document, dividing it into components such as headings, paragraphs, lists, links, tables, and other media. HTML documents are essentially plain text files saved with a .html or .htm file extension, which browsers can then render as web pages.
+            </p>
+        </section>
+
+        <!-- Section: Origin of HTML -->
+        <section id="html-origin" class="my-5">
+            <h2>Origin of HTML</h2>
+            <p>
+                HTML was created in 1991 by Tim Berners-Lee, a British computer scientist, while he was working at CERN, the European Organization for Nuclear Research. The idea was to facilitate the sharing of information between researchers, allowing them to link documents across the internet using hypertext. This marked the birth of the World Wide Web.
+            </p>
+            <p>
+                Initially, HTML was a very simple and basic language with only a few tags to define text, links, and images. Over the years, HTML has evolved into a powerful and complex markup language, with several iterations, including HTML2.0, HTML4.01, XHTML, and finally HTML5, which is widely used today.
+            </p>
+        </section>
+
+        <!-- Section: How to Use HTML -->
+        <section id="html-usage" class="my-5">
+            <h2>How to Use HTML</h2>
+            <p>
+                Writing HTML is as simple as writing a document in plain text. All you need is a text editor (such as Notepad, Sublime Text, or Visual Studio Code) and a web browser (such as Google Chrome, Firefox, or Safari). To begin, create a file with the .html extension, and use the basic structure of an HTML document as follows:
+            </p>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;This is a Heading&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            <p>
+                The structure of an HTML document consists of the following components:
+            </p>
+            <ul>
+                <li><strong>&lt;!DOCTYPE html&gt;</strong>: Declares the document type and version of HTML being used (HTML5).</li>
+                <li><strong>&lt;html&gt;</strong>: This is the root element of the HTML document.</li>
+                <li><strong>&lt;head&gt;</strong>: Contains metadata (information about the document such as title, character encoding, etc.) and links to stylesheets or scripts.</li>
+                <li><strong>&lt;title&gt;</strong>: Specifies the title of the page, which is displayed in the browser's title bar or tab.</li>
+                <li><strong>&lt;body&gt;</strong>: Contains the content of the webpage, including headings, paragraphs, images, and links.</li>
+            </ul>
+        </section>
+
+        <!-- Section: HTML in Modern Web Development -->
+        <section id="relevance" class="my-5">
+            <h2>HTML in Modern Web Development</h2>
+            <p>
+                Despite its origins in the early days of the web, HTML remains one of the most important technologies in modern web development. With the release of HTML5, new features such as audio, video, and scalable vector graphics (SVG) were introduced, along with improved semantics for web page elements, such as &lt;article&gt;, &lt;section&gt;, and &lt;nav&gt;.
+            </p>
+            <p>
+                HTML is also highly interoperable with other web technologies such as CSS (Cascading Style Sheets) for styling, and JavaScript for adding interactivity. Together, HTML, CSS, and JavaScript form the core triad of web development languages.
+            </p>
+        </section>
+
+        <!-- Expand this template for more sections -->
+    </div>
+    <div class="container mt-5">
+        <h1 class="text-center">HTML Tags and Their Use Cases</h1>
+
+        <!-- Section: Basic Tags -->
+        <section id="basic-tags" class="my-5">
+            <h2>Basic Tags</h2>
+            <p>These are the fundamental tags used in every HTML document to structure content.</p>
+            <ul>
+                <li><strong>&lt;!DOCTYPE html&gt;</strong> - Defines the document type and version of HTML (e.g., HTML5).</li>
+                <li><strong>&lt;html&gt;</strong> - The root element that contains all other HTML elements.</li>
+                <li><strong>&lt;head&gt;</strong> - Contains meta information about the document, such as its title and linked stylesheets or scripts.</li>
+                <li><strong>&lt;title&gt;</strong> - Sets the title of the webpage, displayed in the browser's title bar or tab.</li>
+                <li><strong>&lt;body&gt;</strong> - Contains the visible content of the webpage, including text, images, links, and more.</li>
+                <li><strong>&lt;meta&gt;</strong> - Provides metadata like character encoding, viewport settings, and more.</li>
+            </ul>
+        </section>
+
+        <!-- Section: Text Formatting Tags -->
+        <section id="text-formatting" class="my-5">
+            <h2>Text Formatting Tags</h2>
+            <p>Text formatting tags control the appearance of text on a webpage, such as headings, paragraphs, and emphasis.</p>
+            <ul>
+                <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong> - Defines headings, with &lt;h1&gt; being the highest (most important) and &lt;h6&gt; the lowest.</li>
+                <li><strong>&lt;p&gt;</strong> - Represents a paragraph of text.</li>
+                <li><strong>&lt;br&gt;</strong> - Inserts a line break.</li>
+                <li><strong>&lt;hr&gt;</strong> - Creates a horizontal rule (line), often used to separate sections.</li>
+                <li><strong>&lt;strong&gt;</strong> - Indicates strong importance, typically rendered in bold.</li>
+                <li><strong>&lt;em&gt;</strong> - Indicates emphasis, typically rendered in italics.</li>
+                <li><strong>&lt;b&gt;</strong> - Renders text in bold, without indicating importance.</li>
+                <li><strong>&lt;i&gt;</strong> - Renders text in italics, without indicating emphasis.</li>
+                <li><strong>&lt;mark&gt;</strong> - Highlights text.</li>
+                <li><strong>&lt;small&gt;</strong> - Renders text in a smaller font size.</li>
+                <li><strong>&lt;sup&gt;</strong> - Creates superscript text (e.g., for footnotes or mathematical exponents).</li>
+                <li><strong>&lt;sub&gt;</strong> - Creates subscript text (e.g., for chemical formulas).</li>
+                <li><strong>&lt;blockquote&gt;</strong> - Denotes a section of text that is quoted from another source.</li>
+                <li><strong>&lt;pre&gt;</strong> - Displays preformatted text, preserving white spaces and line breaks.</li>
+                <li><strong>&lt;code&gt;</strong> - Represents inline code snippets.</li>
+                <li><strong>&lt;u&gt;</strong> - Underlines text (not widely used due to its potential confusion with links).</li>
+            </ul>
+        </section>
+
+        <!-- Section: Media Tags -->
+        <section id="media-tags" class="my-5">
+            <h2>Media Tags</h2>
+            <p>Media tags allow the embedding of multimedia content, such as images, audio, and video, into a webpage.</p>
+            <ul>
+                <li><strong>&lt;img&gt;</strong> - Embeds an image. It has attributes such as <strong>src</strong> (source) and <strong>alt</strong> (alternative text).</li>
+                <li><strong>&lt;audio&gt;</strong> - Embeds an audio file, with attributes like <strong>controls</strong> (to display playback controls) and <strong>src</strong> (the source file).</li>
+                <li><strong>&lt;video&gt;</strong> - Embeds a video file, with attributes like <strong>controls</strong>, <strong>width</strong>, <strong>height</strong>, and <strong>src</strong>.</li>
+                <li><strong>&lt;source&gt;</strong> - Specifies multiple media resources for the &lt;audio&gt; or &lt;video&gt; elements, allowing the browser to choose the best format.</li>
+                <li><strong>&lt;picture&gt;</strong> - Contains multiple &lt;source&gt; elements and one &lt;img&gt; element to offer multiple image versions based on screen size or format.</li>
+                <li><strong>&lt;iframe&gt;</strong> - Embeds another HTML document within the current document (e.g., embedding YouTube videos or Google Maps).</li>
+            </ul>
+        </section>
+
+        <!-- Section: Table Tags -->
+        <section id="table-tags" class="my-5">
+            <h2>Table Tags</h2>
+            <p>Table tags allow for the creation of tabular data representations in rows and columns.</p>
+            <ul>
+                <li><strong>&lt;table&gt;</strong> - Defines a table.</li>
+                <li><strong>&lt;tr&gt;</strong> - Defines a row within the table.</li>
+                <li><strong>&lt;td&gt;</strong> - Defines a cell within the table row.</li>
+                <li><strong>&lt;th&gt;</strong> - Defines a header cell within a table row (usually bold and centered).</li>
+                <li><strong>&lt;thead&gt;</strong> - Groups the header content in a table.</li>
+                <li><strong>&lt;tbody&gt;</strong> - Groups the body content in a table.</li>
+                <li><strong>&lt;tfoot&gt;</strong> - Groups the footer content in a table.</li>
+                <li><strong>&lt;colgroup&gt;</strong> - Defines a group of columns in a table.</li>
+                <li><strong>&lt;caption&gt;</strong> - Adds a title or description to the table.</li>
+            </ul>
+        </section>
+
+        <!-- Section: Form Tags -->
+        <section id="form-tags" class="my-5">
+            <h2>Form Tags</h2>
+            <p>Forms allow user input and data submission to a server. HTML provides a variety of tags to create different form controls.</p>
+            <ul>
+                <li><strong>&lt;form&gt;</strong> - Defines a form, with attributes like <strong>action</strong> (where to send the data) and <strong>method</strong> (GET or POST).</li>
+                <li><strong>&lt;input&gt;</strong> - Creates various input fields, depending on the <strong>type</strong> attribute (e.g., text, password, email, checkbox, radio).</li>
+                <li><strong>&lt;textarea&gt;</strong> - Defines a multi-line text input field.</li>
+                <li><strong>&lt;select&gt;</strong> - Creates a dropdown menu.</li>
+                <li><strong>&lt;option&gt;</strong> - Defines an option within a dropdown menu.</li>
+                <li><strong>&lt;button&gt;</strong> - Creates a clickable button.</li>
+                <li><strong>&lt;label&gt;</strong> - Provides a label for form elements, improving accessibility and usability.</li>
+                <li><strong>&lt;fieldset&gt;</strong> - Groups related form elements into a fieldset.</li>
+                <li><strong>&lt;legend&gt;</strong> - Defines a caption for the &lt;fieldset&gt;.</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center">CSS: Cascading Style Sheets</h1>
+
+        <!-- Introduction -->
+        <section id="intro" class="my-5">
+            <h2>Introduction to CSS</h2>
+            <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML or XML. CSS controls the layout, colors, fonts, and overall visual structure of web pages.</p>
+            <p>CSS allows developers to separate content from design, improving the flexibility and maintainability of websites. Without CSS, web pages would have to be styled individually, making updates and consistency across a site challenging.</p>
+        </section>
+
+        <!-- History of CSS -->
+        <section id="history" class="my-5">
+            <h2>History of CSS</h2>
+            <p>CSS was developed by the World Wide Web Consortium (W3C) in the mid-1990s to solve the growing demand for a way to style web content effectively. Before CSS, HTML was used for both structure and design, leading to cluttered code and difficulties in managing large websites.</p>
+            <p>The first version, CSS1, was released in 1996. Over time, new versions have been developed to add more sophisticated styling options. CSS3, the latest version, includes features like animations, transitions, and flexible layouts (e.g., Flexbox and Grid).</p>
+        </section>
+
+        <!-- CSS Syntax -->
+        <section id="syntax" class="my-5">
+            <h2>CSS Syntax</h2>
+            <p>CSS rules are composed of selectors and declarations. The syntax follows a straightforward structure:</p>
+            <pre><code>selector {
+    property: value;
+}</code></pre>
+            <ul>
+                <li><strong>Selector:</strong> Targets the HTML element(s) you want to style.</li>
+                <li><strong>Property:</strong> Specifies the style aspect you want to change (e.g., color, margin, font-size).</li>
+                <li><strong>Value:</strong> Defines the value of the property (e.g., red, 10px, bold).</li>
+            </ul>
+        </section>
+
+        <!-- Types of CSS -->
+        <section id="types" class="my-5">
+            <h2>Types of CSS</h2>
+            <p>CSS can be applied to HTML in three main ways:</p>
+            <ul>
+                <li><strong>Inline CSS:</strong> Styles applied directly within an HTML element using the <code>style</code> attribute.</li>
+                <pre><code>&lt;p style="color: red;"&gt;This is a red paragraph.&lt;/p&gt;</code></pre>
+
+                <li><strong>Internal CSS:</strong> Styles defined within the <code>&lt;style&gt;</code> tag in the HTML document's <code>&lt;head&gt;</code> section.</li>
+                <pre><code>&lt;style&gt;
+p {
+    color: red;
+}
+&lt;/style&gt;</code></pre>
+
+                <li><strong>External CSS:</strong> Styles defined in an external stylesheet (a separate .css file) and linked to the HTML document using the <code>&lt;link&gt;</code> tag.</li>
+                <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+            </ul>
+        </section>
+
+        <!-- CSS Selectors -->
+        <section id="selectors" class="my-5">
+            <h2>CSS Selectors</h2>
+            <p>CSS selectors allow you to target specific HTML elements for styling. Common types of selectors include:</p>
+            <ul>
+                <li><strong>Element Selector:</strong> Selects all elements of a given type. E.g., <code>p</code> targets all paragraphs.</li>
+                <li><strong>Class Selector:</strong> Targets elements with a specific class. Prefixed with a dot (.), e.g., <code>.class-name</code>.</li>
+                <li><strong>ID Selector:</strong> Targets an element with a specific ID. Prefixed with a hash (#), e.g., <code>#id-name</code>.</li>
+                <li><strong>Universal Selector:</strong> Selects all elements. E.g., <code>*</code>.</li>
+                <li><strong>Attribute Selector:</strong> Selects elements with a specific attribute. E.g., <code>[type="text"]</code>.</li>
+            </ul>
+        </section>
+
+        <!-- CSS Box Model -->
+        <section id="box-model" class="my-5">
+            <h2>CSS Box Model</h2>
+            <p>The CSS Box Model is a fundamental concept that describes the structure of HTML elements. It consists of the following layers:</p>
+            <ul>
+                <li><strong>Content:</strong> The actual content of the element (e.g., text or image).</li>
+                <li><strong>Padding:</strong> Space between the content and the element's border.</li>
+                <li><strong>Border:</strong> A border around the element's padding (can be styled in various ways).</li>
+                <li><strong>Margin:</strong> Space between the element's border and adjacent elements.</li>
+            </ul>
+            <p>The box model helps determine the total width and height of an element. Understanding it is crucial for controlling layout and spacing.</p>
+        </section>
+
+        <!-- CSS Flexbox -->
+        <section id="flexbox" class="my-5">
+            <h2>CSS Flexbox</h2>
+            <p>Flexbox (Flexible Box Layout) is a layout model that makes it easier to design responsive layouts with flexible alignment and distribution of elements within a container.</p>
+            <p>Flexbox is particularly useful for aligning elements in rows or columns, centering elements, and distributing space between items. Common properties include:</p>
+            <ul>
+                <li><strong>display: flex;</strong> - Enables Flexbox on a container.</li>
+                <li><strong>justify-content:</strong> - Aligns items horizontally (e.g., <code>center</code>, <code>space-between</code>).</li>
+                <li><strong>align-items:</strong> - Aligns items vertically (e.g., <code>center</code>, <code>flex-start</code>).</li>
+                <li><strong>flex-direction:</strong> - Defines the direction of the flex container's items (e.g., <code>row</code>, <code>column</code>).</li>
+                <li><strong>flex-wrap:</strong> - Controls whether flex items wrap to a new line if the container is too small (e.g., <code>wrap</code>, <code>nowrap</code>).</li>
+            </ul>
+            <pre><code>/* Example of Flexbox */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}</code></pre>
+        </section>
+
+    </div>
+    <div class="container mt-5">
+        <h1 class="text-center">CSS Attributes and Inline CSS</h1>
+
+        <!-- CSS Attributes Section -->
+        <section id="css-attributes" class="my-5">
+            <h2>What are CSS Attributes?</h2>
+            <p>CSS attributes, or properties, define how HTML elements are styled. Each attribute controls a specific aspect of an element's appearance, such as size, color, layout, or position. CSS attributes are always paired with values, which define the specific behavior of the property.</p>
+            <p>Here are some commonly used CSS attributes:</p>
+
+            <ul>
+                <li><strong>color</strong>: Specifies the color of text.</li>
+                <pre><code>p {
+    color: red;
+}</code></pre>
+
+                <li><strong>background-color</strong>: Sets the background color of an element.</li>
+                <pre><code>div {
+    background-color: #f1f1f1;
+}</code></pre>
+
+                <li><strong>font-size</strong>: Controls the size of the text.</li>
+                <pre><code>h1 {
+    font-size: 24px;
+}</code></pre>
+
+                <li><strong>margin</strong>: Specifies the space around elements (outside the border).</li>
+                <pre><code>div {
+    margin: 10px;
+}</code></pre>
+
+                <li><strong>padding</strong>: Specifies the space inside the element (between content and border).</li>
+                <pre><code>div {
+    padding: 20px;
+}</code></pre>
+
+                <li><strong>border</strong>: Defines the border around an element. You can set border style, width, and color.</li>
+                <pre><code>div {
+    border: 2px solid black;
+}</code></pre>
+
+                <li><strong>text-align</strong>: Aligns the text within an element.</li>
+                <pre><code>h1 {
+    text-align: center;
+}</code></pre>
+
+                <li><strong>width</strong> and <strong>height</strong>: Define the width and height of an element.</li>
+                <pre><code>img {
+    width: 100px;
+    height: auto;
+}</code></pre>
+
+                <li><strong>display</strong>: Controls how an element is displayed. Common values include <code>block</code>, <code>inline</code>, and <code>none</code>.</li>
+                <pre><code>span {
+    display: inline;
+}</code></pre>
+
+                <li><strong>position</strong>: Specifies how an element is positioned on the page. It can take values like <code>static</code>, <code>relative</code>, <code>absolute</code>, or <code>fixed</code>.</li>
+                <pre><code>div {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}</code></pre>
+            </ul>
+        </section>
+
+        <!-- Inline CSS Section -->
+        <section id="inline-css" class="my-5">
+            <h2>What is Inline CSS?</h2>
+            <p>Inline CSS is a method of applying CSS styles directly to HTML elements using the <code>style</code> attribute. This approach allows you to define styles specific to a single element without affecting other elements on the page.</p>
+            <p>Inline CSS is added within the HTML tag itself, like this:</p>
+            <pre><code>&lt;p style="color: blue; font-size: 18px;"&gt;This is a blue paragraph.&lt;/p&gt;</code></pre>
+
+            <h3>Advantages of Inline CSS</h3>
+            <ul>
+                <li><strong>Quick and Easy:</strong> It's easy to apply styles to a single element without creating separate stylesheets or classes.</li>
+                <li><strong>Overrides Other Styles:</strong> Inline CSS has the highest priority in the CSS cascading order, meaning it will override both external and internal CSS.</li>
+            </ul>
+
+            <h3>Disadvantages of Inline CSS</h3>
+            <ul>
+                <li><strong>Harder to Maintain:</strong> If you have to change the styling across multiple elements, you must edit each one individually.</li>
+                <li><strong>Not Reusable:</strong> Styles applied inline cannot be reused elsewhere in the document, making the code redundant and harder to maintain.</li>
+                <li><strong>Cluttered Code:</strong> Inline CSS mixes presentation with content, which goes against the principle of separating design from structure.</li>
+            </ul>
+
+            <h3>Example of Inline CSS</h3>
+            <p>Below is an example of how to use inline CSS to style a paragraph with specific font size and text color:</p>
+            <pre><code>&lt;p style="color: green; font-size: 20px;"&gt;This is a green paragraph with larger text.&lt;/p&gt;</code></pre>
+            <p>This method applies only to the element where the <code>style</code> attribute is added and doesn't affect other elements on the page.</p>
+        </section>
+
+    </div>
+    <div class="container mt-5">
+        <h1 class="text-center">JavaScript: The Programming Language of the Web</h1>
+
+        <!-- Introduction -->
+        <section id="intro" class="my-5">
+            <h2>Introduction to JavaScript</h2>
+            <p>JavaScript is a versatile, lightweight programming language primarily used to enhance web pages and provide interactive features. It is one of the core technologies of the World Wide Web, alongside HTML and CSS.</p>
+            <p>JavaScript can be used for client-side development (executed in the browser) and server-side development (using platforms like Node.js). It allows web developers to create dynamic and interactive user interfaces, handle events, validate forms, and even build complex web applications.</p>
+        </section>
+
+        <!-- History of JavaScript -->
+        <section id="history" class="my-5">
+            <h2>History of JavaScript</h2>
+            <p>JavaScript was created by Brendan Eich in 1995 while he was working at Netscape Communications Corporation. It was originally developed to make web pages more dynamic, offering an alternative to static HTML pages.</p>
+            <p>The language was initially called "Mocha," then "LiveScript," and finally "JavaScript" to capitalize on the popularity of Java at the time, though the two languages are not directly related. Over the years, JavaScript has evolved significantly, becoming an essential tool for modern web development with features like ECMAScript standards, asynchronous programming, and various frameworks and libraries (e.g., React, Angular, Vue.js).</p>
+        </section>
+
+        <!-- How JavaScript Works -->
+        <section id="how-it-works" class="my-5">
+            <h2>How JavaScript Works</h2>
+            <p>JavaScript is executed in the browser, which includes a JavaScript engine. The browser parses the JavaScript code, converts it into machine code, and executes it. This process happens in real-time, making JavaScript a client-side language that does not require compilation.</p>
+            <p>JavaScript follows an event-driven model, meaning it listens for user interactions like clicks, form submissions, or key presses and responds to them. It is also single-threaded, meaning it executes code one task at a time. However, thanks to asynchronous programming (using <code>setTimeout</code>, <code>setInterval</code>, promises, async/await), JavaScript can handle tasks in the background, allowing other tasks to proceed.</p>
+        </section>
+
+        <!-- Key Features of JavaScript -->
+        <section id="features" class="my-5">
+            <h2>Key Features of JavaScript</h2>
+            <ul>
+                <li><strong>Lightweight and Interpreted:</strong> JavaScript is easy to integrate into HTML pages and does not need to be compiled, which makes it fast and efficient for web applications.</li>
+                <li><strong>Event-Driven:</strong> JavaScript responds to user interactions and browser events, enabling dynamic behaviors on web pages.</li>
+                <li><strong>Cross-Platform:</strong> JavaScript can be executed in any browser and is supported across different operating systems.</li>
+                <li><strong>Object-Oriented:</strong> JavaScript allows developers to create reusable code with objects, classes, and methods, promoting modular development.</li>
+                <li><strong>Asynchronous:</strong> JavaScript can handle asynchronous tasks such as HTTP requests, timers, and user interactions without blocking the execution of other code.</li>
+                <li><strong>Prototypal Inheritance:</strong> Unlike class-based languages like Java, JavaScript uses prototypes, which allow objects to inherit properties from other objects.</li>
+            </ul>
+        </section>
+
+        <!-- JavaScript and the DOM -->
+        <section id="dom" class="my-5">
+            <h2>JavaScript and the DOM</h2>
+            <p>The Document Object Model (DOM) is a programming interface that represents the structure of an HTML or XML document as a tree of objects. JavaScript can interact with the DOM to dynamically update content, modify HTML elements, and handle user events.</p>
+            <p>By using JavaScript to manipulate the DOM, you can create highly interactive user interfaces. Common DOM manipulation tasks include:</p>
+            <ul>
+                <li>Accessing elements using methods like <code>getElementById</code>, <code>getElementsByClassName</code>, or <code>querySelector</code>.</li>
+                <li>Modifying HTML content using <code>innerHTML</code> or <code>textContent</code>.</li>
+                <li>Changing styles and attributes using properties like <code>style</code> or <code>setAttribute</code>.</li>
+                <li>Handling events using <code>addEventListener</code> for clicks, mouse movements, form submissions, etc.</li>
+            </ul>
+        </section>
+
+        <!-- JavaScript Examples -->
+        <section id="examples" class="my-5">
+            <h2>JavaScript Examples</h2>
+
+            <h3>1. Simple Alert</h3>
+            <p>The following JavaScript code displays a popup alert when the page is loaded:</p>
+            <pre><code>&lt;script&gt;
+alert('Welcome to the JavaScript Guide!');
+&lt;/script&gt;</code></pre>
+
+            <h3>2. Changing HTML Content</h3>
+            <p>JavaScript can dynamically change the content of an HTML element using <code>document.getElementById</code> and <code>innerHTML</code>:</p>
+            <pre><code>&lt;button onclick="changeText()"&gt;Click Me&lt;/button&gt;
+&lt;p id="demo"&gt;This text will change.&lt;/p&gt;
+&lt;script&gt;
+function changeText() {
+    document.getElementById('demo').innerHTML = 'The text has changed!';
+}
+&lt;/script&gt;</code></pre>
+
+            <h3>3. Handling Events</h3>
+            <p>JavaScript can handle user events like clicks or form submissions. In this example, clicking the button triggers an alert:</p>
+            <pre><code>&lt;button onclick="showAlert()"&gt;Click Me&lt;/button&gt;
+&lt;script&gt;
+function showAlert() {
+    alert('Button was clicked!');
+}
+&lt;/script&gt;</code></pre>
+
+            <h3>4. Changing CSS Styles</h3>
+            <p>JavaScript can change the style of an element dynamically:</p>
+            <pre><code>&lt;button onclick="changeColor()"&gt;Change Color&lt;/button&gt;
+&lt;p id="colorText"&gt;This text will change color.&lt;/p&gt;
+&lt;script&gt;
+function changeColor() {
+    document.getElementById('colorText').style.color = 'blue';
+}
+&lt;/script&gt;</code></pre>
+        </section>
+
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center">JavaScript Essentials: Functions, Loops, and Conditional Statements</h1>
+
+        <section id="functions" class="my-5">
+            <h2>JavaScript Functions</h2>
+            <p>A function in JavaScript is a block of code designed to perform a particular task. Functions help make code modular, reusable, and easier to maintain. They are executed when called or invoked.</p>
+
+            <h3>Function Declaration</h3>
+            <p>You can declare a function using the <code>function</code> keyword, followed by the function name and parentheses:</p>
+            <pre><code>function greet() {
+    alert('Hello, World!');
+}</code></pre>
+            <p>To call this function, simply use:</p>
+            <pre><code>greet();</code></pre>
+
+            <h3>Function Parameters and Return Value</h3>
+            <p>Functions can accept parameters and return a value. Here's an example:</p>
+            <pre><code>function add(a, b) {
+    return a + b;
+}
+let sum = add(5, 3);  // sum will be 8</code></pre>
+
+            <h3>Anonymous Functions</h3>
+            <p>JavaScript also supports anonymous functions, which are functions without a name. These are often used in event listeners or as callback functions:</p>
+            <pre><code>let multiply = function(x, y) {
+    return x * y;
+};
+console.log(multiply(4, 5));  // Outputs 20</code></pre>
+
+            <h3>Arrow Functions</h3>
+            <p>Arrow functions, introduced in ES6, provide a shorter syntax for writing functions:</p>
+            <pre><code>const greet = () => {
+    console.log('Hello, World!');
+};</code></pre>
+            <p>If there's only one line in the function body, you can omit the curly braces:</p>
+            <pre><code>const greet = () => console.log('Hello!');</code></pre>
+        </section>
+
+        <section id="loops" class="my-5">
+            <h2>JavaScript Loops</h2>
+            <p>Loops in JavaScript are used to repeatedly run a block of code as long as a specified condition is true.</p>
+
+            <h3>For Loop</h3>
+            <p>The <code>for</code> loop is commonly used when the number of iterations is known:</p>
+            <pre><code>for (let i = 0; i &lt; 5; i++) {
+    console.log(i);
+}
+// Outputs 0, 1, 2, 3, 4</code></pre>
+
+            <h3>While Loop</h3>
+            <p>The <code>while</code> loop runs as long as the specified condition is true:</p>
+            <pre><code>let i = 0;
+while (i &lt; 5) {
+    console.log(i);
+    i++;
+}
+// Outputs 0, 1, 2, 3, 4</code></pre>
+
+            <h3>Do-While Loop</h3>
+            <p>The <code>do-while</code> loop runs at least once, even if the condition is false, because the condition is checked after the loop body is executed:</p>
+            <pre><code>let i = 0;
+do {
+    console.log(i);
+    i++;
+} while (i &lt; 5);
+// Outputs 0, 1, 2, 3, 4</code></pre>
+
+            <h3>For...of Loop</h3>
+            <p>The <code>for...of</code> loop is used to iterate over iterable objects such as arrays:</p>
+            <pre><code>let numbers = [1, 2, 3, 4, 5];
+for (let num of numbers) {
+    console.log(num);
+}
+// Outputs 1, 2, 3, 4, 5</code></pre>
+
+            <h3>For...in Loop</h3>
+            <p>The <code>for...in</code> loop is used to iterate over the properties of an object:</p>
+            <pre><code>let person = { name: 'Alice', age: 25 };
+for (let key in person) {
+    console.log(key + ': ' + person[key]);
+}
+// Outputs "name: Alice" and "age: 25"</code></pre>
+        </section>
+
+        <section id="conditionals" class="my-5">
+            <h2>JavaScript Conditional Statements</h2>
+            <p>Conditional statements are used to perform different actions based on different conditions. In JavaScript, the most common conditional statements are <code>if</code>, <code>else</code>, and <code>switch</code>.</p>
+
+            <h3>If...Else</h3>
+            <p>The <code>if</code> statement executes a block of code if the condition is true. The <code>else</code> statement executes a block of code if the condition is false:</p>
+            <pre><code>let age = 18;
+if (age &gt;= 18) {
+    console.log('You are an adult.');
+} else {
+    console.log('You are a minor.');
+}</code></pre>
+
+            <h3>Else If</h3>
+            <p>Use <code>else if</code> to check multiple conditions:</p>
+            <pre><code>let score = 85;
+if (score &gt;= 90) {
+    console.log('Grade A');
+} else if (score &gt;= 80) {
+    console.log('Grade B');
+} else {
+    console.log('Grade C');
+}</code></pre>
+
+            <h3>Switch Statement</h3>
+            <p>The <code>switch</code> statement evaluates an expression and executes the matching case:</p>
+            <pre><code>let day = 'Monday';
+switch (day) {
+    case 'Monday':
+        console.log('Start of the week.');
+        break;
+    case 'Friday':
+        console.log('End of the week.');
+        break;
+    default:
+        console.log('Midweek day.');
+}</code></pre>
+        </section>
+
+        <section id="additional" class="my-5">
+            <h2>Additional Key Concepts</h2>
+
+            <h3>Arrays</h3>
+            <p>Arrays are used to store multiple values in a single variable. JavaScript provides various methods to manipulate arrays:</p>
+            <pre><code>let fruits = ['apple', 'banana', 'cherry'];
+console.log(fruits[0]);  // Outputs 'apple'
+fruits.push('orange');    // Adds 'orange' to the array</code></pre>
+
+            <h3>Objects</h3>
+            <p>Objects in JavaScript are collections of key-value pairs:</p>
+            <pre><code>let person = {
+    name: 'John',
+    age: 30,
+    greet: function() {
+        console.log('Hello!');
+    }
+};
+console.log(person.name);  // Outputs 'John'
+person.greet();  // Outputs 'Hello!'</code></pre>
+
+            <h3>Events</h3>
+            <p>Events are actions that occur in the browser, such as clicks, keypresses, or page loads. JavaScript can listen for and respond to events:</p>
+            <pre><code>&lt;button onclick="alert('Button clicked!')"&gt;Click me&lt;/button&gt;</code></pre>
+
+            <h3>DOM Manipulation</h3>
+            <p>JavaScript can interact with and manipulate the Document Object Model (DOM), which represents the structure of a web page:</p>
+            <pre><code>let element = document.getElementById('myElement');
+element.innerHTML = 'Updated text';</code></pre>
+
+            <h3>Asynchronous JavaScript</h3>
+            <p>JavaScript can handle asynchronous tasks using <code>setTimeout</code>, <code>setInterval</code>, Promises, and <code>async/await</code>. Here's an example of using <code>setTimeout</code>:</p>
+            <pre><code>setTimeout(function() {
+    console.log('This will run after 2 seconds');
+}, 2000);</code></pre>
+        </section>
+    </div>
+    <div class="container mt-5">
+        <h1 class="text-center">Key Points to Remember and Qualities of a Good Programmer</h1>
+
+        <section id="good-practices" class="my-5">
+            <h2>Good Programming Practices</h2>
+            <p>Good programming practices are essential for writing clean, maintainable, and efficient code. Here are some key practices to adopt:</p>
+
+            <h3>1. Write Clean and Readable Code</h3>
+            <p>Code readability is crucial for collaboration and future maintenance. Use meaningful variable and function names, and keep your code organized.</p>
+            <pre><code>function calculateArea(radius) {
+    return Math.PI * radius * radius;
+}</code></pre>
+
+            <h3>2. Follow Coding Standards</h3>
+            <p>Adhere to established coding standards and style guides relevant to the programming language you are using. This ensures consistency across your codebase.</p>
+            <pre><code>// Use camelCase for variable names
+let firstName = 'John';</code></pre>
+
+            <h3>3. Comment Your Code</h3>
+            <p>Write comments to explain complex logic or important sections of your code. This helps others (and your future self) understand your thought process.</p>
+            <pre><code>// Calculate the area of a circle
+let area = calculateArea(5);</code></pre>
+
+            <h3>4. Keep Functions Small and Focused</h3>
+            <p>Functions should do one thing and do it well. This makes them easier to test and reuse. If a function is doing too much, consider breaking it into smaller functions.</p>
+            <pre><code>function calculateCircumference(radius) {
+    return 2 * Math.PI * radius;
+}</code></pre>
+
+            <h3>5. Test Your Code Regularly</h3>
+            <p>Testing is essential for ensuring your code works as intended. Use unit tests, integration tests, and end-to-end tests to cover different aspects of your application.</p>
+
+            <h3>6. Use Version Control</h3>
+            <p>Version control systems like Git help manage changes to your codebase. They allow you to track changes, collaborate with others, and roll back to previous versions if necessary.</p>
+            <pre><code>git commit -m "Fix bug in calculateArea function"</code></pre>
+
+            <h3>7. Optimize for Performance</h3>
+            <p>Be mindful of the performance of your code. Avoid unnecessary calculations, reduce memory usage, and optimize algorithms to improve efficiency.</p>
+
+            <h3>8. Continuously Learn and Improve</h3>
+            <p>The tech industry evolves rapidly. Stay updated with new programming languages, frameworks, and best practices through courses, articles, and communities.</p>
+
+            <h3>9. Collaborate and Seek Feedback</h3>
+            <p>Collaboration improves code quality. Share your code with peers for feedback, participate in code reviews, and be open to constructive criticism.</p>
+
+            <h3>10. Document Your Code</h3>
+            <p>Documentation helps others understand how to use your code. Write clear README files, API documentation, and inline comments to guide users.</p>
+        </section>
+
+        <!-- Qualities of a Good Programmer -->
+        <section id="qualities" class="my-5">
+            <h2>Qualities of a Good Programmer</h2>
+            <p>A good programmer possesses various qualities that enhance their ability to write effective code and work well in teams. Here are some essential qualities:</p>
+
+            <h3>1. Problem-Solving Skills</h3>
+            <p>Good programmers excel at problem-solving. They can analyze complex issues, break them down into manageable parts, and devise effective solutions.</p>
+
+            <h3>2. Attention to Detail</h3>
+            <p>Attention to detail is crucial in programming. Small errors can lead to significant bugs, so being meticulous can save time and effort in debugging.</p>
+
+            <h3>3. Adaptability</h3>
+            <p>The ability to adapt to new technologies, languages, and frameworks is vital. A good programmer embraces change and is open to learning new tools.</p>
+
+            <h3>4. Strong Communication Skills</h3>
+            <p>Effective communication is essential for collaboration within teams. A good programmer can articulate their ideas, listen to others, and provide feedback.</p>
+
+            <h3>5. Passion for Technology</h3>
+            <p>A genuine interest in technology and programming drives motivation and fosters continuous learning. Passionate programmers stay curious and explore new concepts.</p>
+
+            <h3>6. Team Player</h3>
+            <p>Collaboration is key in software development. A good programmer works well with others, shares knowledge, and contributes positively to the team environment.</p>
+
+            <h3>7. Time Management</h3>
+            <p>Good programmers manage their time effectively to meet deadlines and deliver high-quality work. They prioritize tasks and avoid procrastination.</p>
+
+            <h3>8. Analytical Thinking</h3>
+            <p>Analytical thinking enables programmers to understand requirements, identify patterns, and make data-driven decisions. This skill is essential for debugging and optimizing code.</p>
+
+            <h3>9. Creativity</h3>
+            <p>Creativity is valuable in programming, especially when developing innovative solutions or designing user interfaces. A good programmer thinks outside the box.</p>
+
+            <h3>10. Resilience</h3>
+            <p>Programming can be challenging, and setbacks are common. A good programmer remains resilient, learns from mistakes, and perseveres in the face of difficulties.</p>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion" class="my-5">
+            <h2>Conclusion</h2>
+            <p>Being a good programmer involves more than just knowing syntax and algorithms. By adopting good programming practices and embodying essential qualities, programmers can enhance their effectiveness, contribute to successful projects, and grow in their careers. Continuous learning, collaboration, and a passion for technology are the cornerstones of becoming a proficient and respected programmer.</p>
+        </section>
+    </div>
+
+
+
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: #f1f1f1;">
+            © 2025, DeadDOS | Understanding HTML: Origins, Usage, and More
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
