@@ -151,6 +151,80 @@
         <span id="iconsContainer"></span>
     </div>
     <br />
+    <div class="container">
+      <div class="text-center my-4 p-4 border border-info rounded shadow-sm mx-auto" style="max-width: 800px;">
+        <h2 class="text-warning mb-3">Boost Your Free Fire Profile with Free Likes!</h2>
+      <p class="lead">
+        Likes in Free Fire aren’t just for show—they’re a sign of skill, popularity, and respect. A well-liked profile stands out, proving you’re a serious player.
+      </p>
+      <p>
+        Since official ways like Craftland maps are no longer available, I built this tool to bring likes back—no hacks, no risky apps. Just enter your UID and you're set!
+      </p>
+      <h4 class="text-primary mt-4">How It Works:</h4>
+      <ul class="list-unstyled">
+        <li>✅ Enter your Free Fire UID below</li>
+        <li>✅ Complete the Cloudflare verification</li>
+        <li>✅ Click “Claim Free Likes”</li>
+        <li>✅ Watch your status update in real time</li>
+      </ul>
+      <h5 class="text-danger mt-4">Please Note:</h5>
+      <ul class="list-unstyled">
+        <li>• Max 100 likes per UID every 24 hours</li>
+        <li>• No extra likes can be sent during the cooldown</li>
+        <li>• Teammates or visitors can’t add likes during this time</li>
+      </ul>
+      <p class="mt-3">
+        This tool is completely safe and follows game rules—no bans, no issues. Claim your likes now and show the world you’re a legend!
+      </p>
+    </div>
+    </div>  
+    <br />
+    <div id="regionBtn" class="d-flex justify-content-center flex-wrap text-center">
+      <h3 class="mt-2">REGION:&nbsp;&nbsp;</h3>
+      <div class="d-flex flex-wrap justify-content-center">
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('ind')">IND</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('br')">BR</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('sg')">SG</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('ru')">RU</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('id')">ID</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('tw')">TW</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('na')">NA</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('vn')">VN</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('th')">TH</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('me')">ME</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('pk')">PK</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('cis')">CIS</button>
+          <button class="btn btn-success border border-light m-1" onclick="setRegion('bd')">BD</button>
+      </div>
+  </div>
+<br/>
+<div class="h3 mt-3 d-flex justify-content-center"> 
+  <label for="likeUid">UID:&nbsp;
+      <input class="h3 rounded-pill text-dark" type="text" id="likeUid" name="likeUid" placeholder="2180732447" required>
+  </label>
+</div>
+<br/>
+<div class="d-flex justify-content-center">
+  <button id="goBtn" class="rounded-pill btn text-light" onclick="like()">GO!</button>
+</div>
+<br/>
+<div class="d-flex flex-wrap justify-content-center">
+  <a href="https://t.me/TrueClasher4">
+    <button id="buyBtn" class="btn btn-primary border border-light m-1 d-flex align-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-telegram me-2" viewBox="0 0 16 16">
+        <path
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09" />
+      </svg>
+      Buy Key or Source Code
+    </button>
+  </a>
+</div>
+<br />
+<div class="container">
+  <h3 id="likesSentText"strong></strong></h3>
+</div>
+    <br />
     <div id="markdown" style="display:none;">
 # 📝 API Documentation
 
@@ -635,5 +709,6 @@ All Rights Reserved!
     const raw = document.getElementById("markdown").textContent;
     document.getElementById("rendered-markdown").innerHTML = marked.parse(raw);
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>

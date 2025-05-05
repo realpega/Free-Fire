@@ -12,11 +12,11 @@ html {
     scrollbar-width: none;
 }
 
-h1, h3, h4, strong, label[for=uid], .btn {
+h1, h2, h3, h4, strong, label[for=uid], .btn {
     font-family: 'Font Bold', sans-serif;
 }
 
-span, #uid{
+p, li, ul, span, #uid, #likeUid {
     font-family: 'Font', sans-serif;
 }
 
@@ -24,7 +24,7 @@ span, #uid{
     height: 400px;
 }
 
-#uid {
+#uid, #likeUid {
     width: 175px;
     text-align: center;
 }
@@ -43,7 +43,7 @@ span, #uid{
       height: auto;
     }
 
-    #uid {
+    #uid, #likeUid {
         width: 150px;
         text-align: center;
     }

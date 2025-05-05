@@ -32,6 +32,20 @@ function redirectToURL() {
                 });
 }
 
+function like() {
+        const uid = document.getElementById("likeUid").value;
+        
+        const url = `/api/like?region=${region}&uid=${uid}&key=${key}`;  
+        fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                        sendLikes();
+                })
+                .catch(error => {
+                        console.error('Error fetching data:', error);
+                });
+    }
+
 function unixToHumanTime(unixTime) {
     const date = new Date(unixTime * 1000);
     return date.toLocaleString();
@@ -150,6 +164,10 @@ function displayData(data) {
         document.getElementById('captainLiked').textContent = data.captainBasicInfo.liked;
 
         
+}
+
+function sendLikes() {
+        document.getElementById('likesSentText').textContent = "Likes sent successfully!";
 }
 
 /*document.addEventListener('keydown', function(event) {
