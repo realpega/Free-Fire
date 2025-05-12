@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pegacrypt</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  background: #2a2a2a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #00d1b2;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #00d1b2;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #00d1b2;
+  padding-bottom: 8px;
+}
+
+.input-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+textarea, input[type="text"], input[type="password"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #333;
+  color: #e0e0e0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
+  outline: none;
+  border-color: #00d1b2;
+  box-shadow: 0 0 8px rgba(0, 209, 178, 0.3);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input[type="password"] {
+  font-family: inherit;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #00d1b2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #00b89c;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.default-btn, .copy-btn {
+  width: auto;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background: #555;
+  border-radius: 6px;
+}
+
+.default-btn:hover, .copy-btn:hover {
+  background: #666;
+  transform: translateY(-2px);
+}
+
+.default-btn:active, .copy-btn:active {
+  transform: translateY(0);
+}
+
+.copy-btn {
+  background: #4a4a4a;
+}
+
+.copy-btn:hover {
+  background: #5a5a5a;
+}
+
+textarea[readonly] {
+  background: #3a3a3a;
+  cursor: default;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  textarea, input[type="text"], input[type="password"], .default-btn, .copy-btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .default-btn, .copy-btn {
+    width: 100%;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+section {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .input-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .default-btn, .copy-btn {
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  textarea, input[type="text"], input[type="password"] {
+    flex: 1;
+  }
+}
+  </style>
+  <script src="https://unpkg.com/openpgp@5.11.2/dist/openpgp.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Pegacrypt</h1>
+
+    <section>
+      <h2>Encrypt</h2>
+      <div class="input-group">
+        <textarea id="inputText" rows="5" placeholder="Enter text to encrypt"></textarea>
+      </div>
+      <div class="input-group">
+        <input type="text" id="encryptionKey" placeholder="Enter 16 or 32-char AES key">
+        <button class="default-btn" onclick="setDefaultEncryptionKey()">Default</button>
+      </div>
+      <div class="input-group">
+        <input type="text" id="encryptionIV" placeholder="Enter 12 or 16-char IV">
+        <button class="default-btn" onclick="setDefaultEncryptionIV()">Default</button>
+      </div>
+      <div class="input-group">
+        <textarea id="pgpPublicKey" rows="5" placeholder="Enter PGP public key"></textarea>
+        <button class="default-btn" onclick="setDefaultPgpPublicKey()">Default</button>
+      </div>
+      <button onclick="encryptAndEncode()">Encrypt</button>
+      <br />
+      <div class="input-group">
+        <textarea id="encodedText" rows="5" readonly placeholder="Encrypted and encoded text will appear here"></textarea>
+        <button class="copy-btn" onclick="copyEncryptedText()">Copy</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Decrypt</h2>
+      <div class="input-group">
+        <textarea id="inputEncodedText" rows="5" placeholder="Enter text to decrypt"></textarea>
+      </div>
+      <div class="input-group">
+        <input type="text" id="decryptionKey" placeholder="Enter 16 or 32-char AES key">
+        <button class="default-btn" onclick="setDefaultDecryptionKey()">Default</button>
+      </div>
+      <div class="input-group">
+        <input type="text" id="decryptionIV" placeholder="Enter 12 or 16-char IV">
+        <button class="default-btn" onclick="setDefaultDecryptionIV()">Default</button>
+      </div>
+      <div class="input-group">
+        <textarea id="pgpPrivateKey" rows="5" placeholder="Enter PGP private key"></textarea>
+        <button class="default-btn" onclick="setDefaultPgpPrivateKey()">Default</button>
+      </div>
+      <div class="input-group">
+        <input type="text" id="pgpPassphrase" placeholder="Enter PGP passphrase">
+        <button class="default-btn" onclick="setDefaultPgpPassphrase()">Default</button>
+      </div>
+      <button onclick="decodeAndDecrypt()">Decrypt</button>
+      <br />
+      <div class="input-group">
+        <textarea id="decodedText" rows="5" readonly placeholder="Decrypted text will appear here"></textarea>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const defaultValues = {
+      encryptionKey: 'Yg&tc%DEuh6%Zc^8',
+      encryptionIV: '6oyZDr22E3ychjM%',
+      pgpPublicKey: `-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: OpenPGP.js v4.10.10
+Comment: https://openpgpjs.org
+
+xsBNBGgh17oBCACs7PjhhSFbUUdWt/5rT2oQpO6pabYrpoVAOk68JggntDFD
+2qe8YLRrhbbXgLkMu/wBKUYk/FUHTix0V+c2Du4rClghi65kjlN83FNj8VYx
+xCFmnSqlgwrv1HcaywnU+YTCAX6KhiI9aRFMRpmUp9yckDbQ3Kwg9Nuu1eyM
+rhQq6WWqro5402ayGphZ1+hTvVPZ1hkk9LxPH94RH+C/ZK5iaDx6oxlL9aJi
+/P7zNarwaRpWq1yKg5TazhcK6tPskx/Q4cc7W0ibBtk7pzL7CIuRhFOWIH1L
+vUFcOUn18IZBS7+jbVGx1DeJZoiskmDM1+gbeH58jQ6saPAABIvD5wjRABEB
+AAHNHkRlYWRET1MgPGFkbWluQGRlYWRkb3Mub25saW5lPsLAjQQQAQgAIAUC
+aCHXugYLCQcIAwIEFQgKAgQWAgEAAhkBAhsDAh4BACEJEB3fpTIoZjxlFiEE
+9TDeQXiB3PlAPersHd+lMihmPGVrzAf9HlQ4tp+u0wktDFyLEhKn28lqNdWj
+s7ytn5+mtvAyIXnYh1brqLQKb+/nf/yQjH0SS2xshaBAG8KrZWA+ZtOWgZoA
+LxdFyty/7ar/sGssMAF82xz/XJtAqDlj/ydF7eZVOdN7pVXVxnWXUQqVeIYC
+5YpnRVIKwUs5HXITMRE31Q2yymzkrRc+oPlVBLdauKczvN1xUHidyYjYq3a6
+TLmzxStLJp6/OZUEtDEcB2uyAsamOsSzGYVf84ZLQQfUZ/BfUAGpMiYQiLf0
+8lZ/ky3jLmuIJhNT469LSt0+nnq7KFf4kZtVvkcXJT69dN2CAwFxIBfhvP5G
+KWoLCXfsYpUwiM7ATQRoIde6AQgAw8z24C6RVtsk6At72loPTV2sucDHkli4
+mHhOUWbL3I6Yzq8PbRlPZctP4a2Eai78C1aAK3FZ+77xDTHLm1aZEdht944R
+CXszMkWcycCYdneJm1hi+u5djuyYYDpD6kR8+wFxoW/2shb1gW33BuDDOxgW
+srpha2//IOO3h2QLLY7Zo5KPmLr+2nwG+9e5sDhz1YDl0ckzQzanf8G/u4/m
+sfTPUNHhwY6Qao9rSpz/3SPWP7awmpBASma5EQpcHC8Q4oF0cRw8NYX7hsmA
+j/xZyZJBQQBuq33fbCjZlTMQa7+TBSu4puP3kep5g5mNHSh2oM6Q3haTKx1+
+n+8bKM5w0wARAQABwsB2BBgBCAAJBQJoIde6AhsMACEJEB3fpTIoZjxlFiEE
+9TDeQXiB3PlAPersHd+lMihmPGVZ6wf9F+iTG2kTtoFIobI0uJ8DPm2RXbZ/
+LZNz1YDsdfPl6/8nC+Ob3la/6t0g6HnwppAklButBuWEU/cwByOFISJLI3wt
+LIxtDcJcUZl2x9T48aeKYt2yXi7mxrRiN3bFYraVMYkyide+Pqe/L1K5xLbG
+JNhvNziJB/yNvmJlEJj5mBaH4e++2pMEKZif8+osuhenmD+kez/4DCgvZYWe
+96CY/m/rfl9rbWYyJh4AyyhxcgmRGRQn+nhbsaz//Cj6RJnvbqfWYyEjwQPu
+9V1M49bqoHUS7MGwkzuxGBhp4Ewa+bBy2pKvCj1j2q+wrc8QC1RadKtLcLk1
+aMlLXr+a+FMDKA==
+=OYPf
+-----END PGP PUBLIC KEY BLOCK-----`,
+      decryptionKey: 'Yg&tc%DEuh6%Zc^8',
+      decryptionIV: '6oyZDr22E3ychjM%',
+      pgpPrivateKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+Version: OpenPGP.js v4.10.10
+Comment: https://openpgpjs.org
+
+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
+yUtev5r4UwMo
+=wV/C
+-----END PGP PRIVATE KEY BLOCK-----`,
+      pgpPassphrase: 'pegacrypt'
+    };
+
+    function setDefaultEncryptionKey() {
+      document.getElementById('encryptionKey').value = defaultValues.encryptionKey;
+    }
+
+    function setDefaultEncryptionIV() {
+      document.getElementById('encryptionIV').value = defaultValues.encryptionIV;
+    }
+
+    function setDefaultPgpPublicKey() {
+      document.getElementById('pgpPublicKey').value = defaultValues.pgpPublicKey;
+    }
+
+    function setDefaultDecryptionKey() {
+      document.getElementById('decryptionKey').value = defaultValues.decryptionKey;
+    }
+
+    function setDefaultDecryptionIV() {
+      document.getElementById('decryptionIV').value = defaultValues.decryptionIV;
+    }
+
+    function setDefaultPgpPrivateKey() {
+      document.getElementById('pgpPrivateKey').value = defaultValues.pgpPrivateKey;
+    }
+
+    function setDefaultPgpPassphrase() {
+      document.getElementById('pgpPassphrase').value = defaultValues.pgpPassphrase;
+    }
+
+    async function copyEncryptedText() {
+      const text = document.getElementById('encodedText').value;
+      if (text.trim() === '') {
+        alert('No encrypted text to copy!');
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(text);
+        alert('Encrypted text copied to clipboard!');
+      } catch (error) {
+        console.error('Copy failed:', error);
+        alert('Failed to copy text: ' + error.message);
+      }
+    }
+
+    function base64Encode(text) {
+      return btoa(text);
+    }
+
+    function base64Decode(text) {
+      return atob(text);
+    }
+
+    async function importKeyDynamic(password) {
+      const enc = new TextEncoder();
+      const keyBuffer = enc.encode(password);
+
+      if (keyBuffer.byteLength !== 16 && keyBuffer.byteLength !== 32) {
+        throw new Error('Key must be exactly 16 or 32 characters.');
+      }
+
+      return crypto.subtle.importKey(
+        "raw",
+        keyBuffer,
+        "AES-GCM",
+        false,
+        ["encrypt", "decrypt"]
+      );
+    }
+
+    function getIVDynamic(ivText) {
+      const enc = new TextEncoder();
+      const ivBuffer = enc.encode(ivText);
+      if (ivBuffer.byteLength !== 12 && ivBuffer.byteLength !== 16) {
+        throw new Error('IV must be exactly 12 or 16 characters.');
+      }
+      return ivBuffer;
+    }
+
+    async function encryptData(keyText, ivText, data) {
+      const key = await importKeyDynamic(keyText);
+      const iv = getIVDynamic(ivText);
+      const encoded = new TextEncoder().encode(data);
+
+      const encrypted = await crypto.subtle.encrypt(
+        { name: "AES-GCM", iv: iv },
+        key,
+        encoded
+      );
+
+      return new Uint8Array(encrypted);
+    }
+
+    async function decryptData(keyText, ivText, encryptedData) {
+      const key = await importKeyDynamic(keyText);
+      const iv = getIVDynamic(ivText);
+
+      const decrypted = await crypto.subtle.decrypt(
+        { name: "AES-GCM", iv: iv },
+        key,
+        encryptedData
+      );
+
+      return new TextDecoder().decode(decrypted);
+    }
+
+    async function pgpEncrypt(data, publicKeyText) {
+      const publicKey = await openpgp.readKey({ armoredKey: publicKeyText });
+      const encrypted = await openpgp.encrypt({
+        message: await openpgp.createMessage({ text: data }),
+        encryptionKeys: publicKey
+      });
+      return encrypted;
+    }
+
+    async function pgpDecrypt(encryptedData, privateKeyText, passphrase) {
+      const privateKey = await openpgp.decryptKey({
+        privateKey: await openpgp.readPrivateKey({ armoredKey: privateKeyText }),
+        passphrase
+      });
+      const message = await openpgp.readMessage({ armoredMessage: encryptedData });
+      const decrypted = await openpgp.decrypt({
+        message,
+        decryptionKeys: privateKey
+      });
+      return decrypted.data;
+    }
+
+    async function encryptAndEncode() {
+      const input = document.getElementById('inputText').value;
+      const keyText = document.getElementById('encryptionKey').value;
+      const ivText = document.getElementById('encryptionIV').value;
+      const pgpPublicKey = document.getElementById('pgpPublicKey').value;
+
+      if (input.trim() === '' || keyText.trim() === '' || ivText.trim() === '' || pgpPublicKey.trim() === '') {
+        alert('Please enter text, AES key, IV, and PGP public key!');
+        return;
+      }
+
+      try {
+        const encryptedData = await encryptData(keyText, ivText, input);
+        let encoded = btoa(String.fromCharCode(...encryptedData));
+
+        for (let i = 0; i < 2; i++) {
+          encoded = base64Encode(encoded);
+        }
+
+        const pgpEncrypted = await pgpEncrypt(encoded, pgpPublicKey);
+
+        document.getElementById('encodedText').value = pgpEncrypted;
+      } catch (error) {
+        console.error(error);
+        alert('Encryption failed: ' + error.message);
+      }
+    }
+
+    async function decodeAndDecrypt() {
+      const input = document.getElementById('inputEncodedText').value;
+      const keyText = document.getElementById('decryptionKey').value;
+      const ivText = document.getElementById('decryptionIV').value;
+      const pgpPrivateKey = document.getElementById('pgpPrivateKey').value;
+      const pgpPassphrase = document.getElementById('pgpPassphrase').value;
+
+      if (input.trim() === '' || keyText.trim() === '' || ivText.trim() === '' || pgpPrivateKey.trim() === '' || pgpPassphrase.trim() === '') {
+        alert('Please enter encoded text, AES key, IV, PGP private key, and passphrase!');
+        return;
+      }
+
+      try {
+        const pgpDecrypted = await pgpDecrypt(input, pgpPrivateKey, pgpPassphrase);
+
+        let decoded = pgpDecrypted;
+        for (let i = 0; i < 3; i++) {
+          decoded = base64Decode(decoded);
+        }
+1
+        const encryptedBytes = new Uint8Array([...decoded].map(c => c.charCodeAt(0)));
+        const decryptedText = await decryptData(keyText, ivText, encryptedBytes);
+
+        document.getElementById('decodedText').value = decryptedText;
+      } catch (error) {
+        console.error(error);
+        alert('Decryption failed: ' + error.message);
+      }
+    }
+  </script>
+</body>
+</html>
