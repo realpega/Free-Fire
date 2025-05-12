@@ -2,7 +2,7 @@ let region = "";
 
 let itemData = [];
 
-fetch('itemData.json')
+fetch('https://raw.githubusercontent.com/0xMe/ItemID2/refs/heads/main/assets/itemData.json')
   .then(res => res.json())
   .then(data => {
     itemData = data;
@@ -64,10 +64,10 @@ function displayData(data) {
 
         document.getElementById('createAt').textContent = unixToHumanTime(data.basicInfo.createAt);
 
-        const avatarItem = itemData.find(item => item.itemID == data.profileInfo.avatarId);
-        document.getElementById('headPic').textContent = avatarItem ? avatarItem.description : data.profileInfo.avatarId;
+        const avatarItem = itemData.find(item => item.itemID == data.basicInfo.headPic);
+        document.getElementById('headPic').textContent = avatarItem ? avatarItem.description : data.basicInfo.headPic;
 
-        document.getElementById('headPicId').textContent = data.profileInfo.avatarId;
+        document.getElementById('headPicId').textContent = data.basicInfo.headPic;0
 
         let iconName = avatarItem?.icon;
         const avatarImg = document.getElementById("avatarImg");
@@ -124,6 +124,8 @@ function displayData(data) {
         const petSkinItem = itemData.find(item => item.itemID == data.petInfo.skinId);
         document.getElementById('petSkin').textContent = petSkinItem ? petSkinItem.description : data.petInfo.skinId;
 
+        document.getElementById('signature').textContent = data.socialInfo.signature;
+
         document.getElementById('clanName').textContent = data.clanBasicInfo.clanName;
         document.getElementById('clanId').textContent = data.clanBasicInfo.clanId;
         document.getElementById('clanLevel').textContent = data.clanBasicInfo.clanLevel;
@@ -152,8 +154,6 @@ function displayData(data) {
                 iconsContainer.appendChild(imgElement);
         });
 
-
-        document.getElementById('signature').textContent = data.socialInfo.signature;
 
         document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
         document.getElementById('rewardState').textContent = data.creditScoreInfo.rewardState;
