@@ -11,7 +11,7 @@ fetch('https://raw.githubusercontent.com/0xMe/ItemID2/refs/heads/main/assets/ite
     console.error('Failed to load itemData.json:', err);
 });
 
-const key = "Sounava777-April-25";
+const key = "Sounava777-June-07";
 
 function setRegion(newRegion) {
         region = newRegion;
@@ -96,7 +96,7 @@ function displayData(data) {
         document.getElementById('lastLoginAt').textContent = unixToHumanTime(data.basicInfo.lastLoginAt);
         document.getElementById('nickname').textContent = data.basicInfo.nickname;
         document.getElementById('exp').textContent = data.basicInfo.exp;
-        document.getElementById('rank').textContent = data.basicInfo.rank;
+        document.getElementById('brRank').textContent = data.basicInfo.brRank;
         document.getElementById('csRank').textContent = data.basicInfo.csRank;
         document.getElementById('level').textContent = data.basicInfo.level;
         document.getElementById('liked').textContent = data.basicInfo.liked;
@@ -113,8 +113,8 @@ function displayData(data) {
         } else {
                 document.getElementById('petId').textContent = data.petInfo.id;
         }
-        document.getElementById('petName').textContent = data.petInfo.name;
-        document.getElementById('petStatus').textContent = data.petInfo.isSelected;
+        document.getElementById('petName').textContent = data.petInfo.nickname || petNickname;
+        document.getElementById('petStatus').textContent = data.petInfo ? true : false;
         document.getElementById('petLevel').textContent = data.petInfo.level;
         document.getElementById('petExp').textContent = data.petInfo.exp;
 
@@ -133,7 +133,7 @@ function displayData(data) {
         document.getElementById('clanCapacity').textContent = data.clanBasicInfo.capacity;
         document.getElementById('captainId').textContent = data.clanBasicInfo.captainId;
 
-        const skillParts = data.profileInfo.equipedSkills.split(','); // Make array from string
+        /*const skillParts = data.profileInfo.equipedSkills.split(','); // Make array from string
         let skills = [];
         for (let i = 0; i < skillParts.length; i += 4) {
                 const skillId = skillParts[i + 1]; // skillId is the 2nd item in every group
@@ -152,7 +152,7 @@ function displayData(data) {
                 imgElement.alt = `Icon ${skillId}`;
                 imgElement.classList.add('m-1');
                 iconsContainer.appendChild(imgElement);
-        });
+        });*/
 
 
         document.getElementById('creditScore').textContent = data.creditScoreInfo.creditScore;
