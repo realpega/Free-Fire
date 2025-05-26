@@ -21,7 +21,7 @@ function setRegion(newRegion) {
 function redirectToURL() {
         const uid = document.getElementById("uid").value;
         
-        const url = `https://free-fire-data.vercel.app/api/data?region=${region}&uid=${uid}&key=${key}`;  
+        const url = `https://ff.deaddos.online/api/data?region=${region}&uid=${uid}&key=${key}`;  
         fetch(url)
                 .then(response => response.json())
                 .then(data => {
@@ -35,7 +35,7 @@ function redirectToURL() {
 function like() {
         const uid = document.getElementById("likeUid").value;
         
-        const url = `/api/like?region=${region}&uid=${uid}&key=${key}`;  
+        const url = `https://ff.deaddos.online/api/like?region=${region}&uid=${uid}&key=${key}`;  
         fetch(url)
                 .then(response => response.json())
                 .then(data => {
